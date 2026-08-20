@@ -1,0 +1,111 @@
+export interface Scene {
+  id: string
+  title: string
+  body: string
+  image?: string
+}
+
+export interface Episode {
+  id: string
+  showId: string
+  title: string
+  synthetic?: boolean
+  scenes: Scene[]
+}
+
+export interface ShowEpisodeRef {
+  id: string
+  title: string
+}
+
+export interface Show {
+  id: string
+  title: string
+  synthetic?: boolean
+  episodes: ShowEpisodeRef[]
+}
+
+export interface Catalog {
+  shows: Array<{ id: string; title: string }>
+}
+
+export type Locale = 'tr' | 'en'
+
+export function isScene(value: unknown): value is Scene {
+  const record = value as Record<string, unknown> | null
+  const image = record?.image
+  const imageOk = image === undefined || typeof image === 'string'
+  const ok =
+    typeof value === 'object' &&
+    value !== null &&
+    typeof record?.id === 'string' &&
+    typeof record.title === 'string' &&
+    typeof record.body === 'string' &&
+    imageOk
+  return ok
+}
+
+export function isEpisode(value: unknown): value is Episode {
+  const record = value as Record<string, unknown> | null
+  const scenes = record?.scenes
+  const scenesOk = Array.isArray(scenes) && scenes.every(isScene)
+  const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
+  const ok =
+    typeof value === 'object' &&
+    value !== null &&
+    typeof record?.id === 'string' &&
+    typeof record.showId === 'string' &&
+    typeof record.title === 'string' &&
+    syntheticOk &&
+    scenesOk
+  return ok
+}
+
+export function isShow(value: unknown): value is Show {
+  const record = value as Record<string, unknown> | null
+  const episodes = record?.episodes
+  const episodesOk =
+    Array.isArray(episodes) &&
+    episodes.every((item) => {
+      const row = item as Record<string, unknown> | null
+      const rowOk =
+        typeof item === 'object' &&
+        item !== null &&
+        typeof row?.id === 'string' &&
+        typeof row.title === 'string'
+      return rowOk
+    })
+  const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
+  const ok =
+    typeof value === 'object' &&
+    value !== null &&
+    typeof record?.id === 'string' &&
+    typeof record.title === 'string' &&
+    syntheticOk &&
+    episodesOk
+  return ok
+}
+
+export function isCatalog(value: unknown): value is Catalog {
+  const record = value as Record<string, unknown> | null
+  const shows = record?.shows
+  const showsOk =
+    Array.isArray(shows) &&
+    shows.every((item) => {
+      const row = item as Record<string, unknown> | null
+      const rowOk =
+        typeof item === 'object' &&
+        item !== null &&
+        typeof row?.id === 'string' &&
+        typeof row.title === 'string'
+      return rowOk
+    })
+  const ok = typeof value === 'object' && value !== null && showsOk
+  return ok
+}
+
+export function sceneImage(scene: Scene | undefined): string | undefined {
+  const raw = scene?.image?.trim()
+  const path = raw === '' ? undefined : raw
+  return path
+}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Scene } from '@/types/piece'
+import type { Scene } from '@/types/library'
 
 defineProps<{
   scenes: Scene[]

@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import type { Scene } from '@/types/piece'
+import { computed } from 'vue'
+import { sceneImage, type Scene } from '@/types/library'
 
-defineProps<{
+const props = defineProps<{
   scene: Scene | undefined
   imagesOn: boolean
   empty: string
 }>()
+
+const imageSrc = computed(() => sceneImage(props.scene))
 </script>
 
 <template>
@@ -18,10 +21,10 @@ defineProps<{
       class="h-[min(24rem,48vh)] overflow-hidden rounded-md bg-well md:h-[min(32rem,58vh)]"
     >
       <img
-        v-if="scene"
-        :key="scene.id"
-        :src="scene.image"
-        :alt="scene.title"
+        v-if="imageSrc"
+        :key="scene?.id"
+        :src="imageSrc"
+        :alt="scene?.title"
         class="scene-fade size-full object-cover"
       />
     </figure>
@@ -32,7 +35,7 @@ defineProps<{
       <p v-if="!scene" class="text-base/7 text-mute">{{ empty }}</p>
       <div v-else :key="scene.id" class="scene-fade">
         <h1 class="font-sans text-2xl/8 font-medium">{{ scene.title }}</h1>
-        <p class="mt-4 max-w-[70ch] text-lg/8">{{ scene.body }}</p>
+        <p class="mt-4 max-w-[70ch] whitespace-pre-wrap text-lg/8">{{ scene.body }}</p>
       </div>
     </article>
   </div>

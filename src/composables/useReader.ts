@@ -1,14 +1,7 @@
-import { computed, onMounted, onUnmounted, ref, type Ref } from 'vue'
-import { isPiece, type Locale, type Piece, type Scene } from '@/types/piece'
+import { computed, onMounted, onUnmounted, ref, watch, type Ref } from 'vue'
+import type { Episode, Scene } from '@/types/library'
 
-const STORAGE_LOCALE = 'meddah.locale'
 const STORAGE_IMAGES = 'meddah.imagesOn'
-
-function readLocale(): Locale {
-  const stored = window.localStorage.getItem(STORAGE_LOCALE)
-  const locale: Locale = stored === 'en' ? 'en' : 'tr'
-  return locale
-}
 
 function readImagesOn(): boolean {
   const stored = window.localStorage.getItem(STORAGE_IMAGES)
@@ -16,39 +9,29 @@ function readImagesOn(): boolean {
   return on
 }
 
-export function useReader(rawPiece: unknown): {
-  piece: Piece | null
-  scenes: Scene[]
+export function useReader(episode: Ref<Episode | null>): {
+  episode: Ref<Episode | null>
+  scenes: Ref<Scene[]>
   index: Ref<number>
-  locale: Ref<Locale>
   imagesOn: Ref<boolean>
   scene: Ref<Scene | undefined>
   go: (delta: number) => void
   goTo: (nextIndex: number) => void
-  toggleLocale: () => void
   toggleImages: () => void
 } {
-  const piece = isPiece(rawPiece) ? rawPiece : null
-  const scenes = piece?.scenes ?? []
   const index = ref(0)
-  const locale = ref<Locale>(readLocale())
   const imagesOn = ref(readImagesOn())
-  const scene = computed(() => scenes[index.value])
+  const scenes = computed(() => episode.value?.scenes ?? [])
+  const scene = computed(() => scenes.value[index.value])
 
   function goTo(nextIndex: number): void {
-    const last = Math.max(scenes.length - 1, 0)
+    const last = Math.max(scenes.value.length - 1, 0)
     const clamped = Math.min(Math.max(nextIndex, 0), last)
     index.value = clamped
   }
 
   function go(delta: number): void {
     goTo(index.value + delta)
-  }
-
-  function toggleLocale(): void {
-    const next: Locale = locale.value === 'tr' ? 'en' : 'tr'
-    locale.value = next
-    window.localStorage.setItem(STORAGE_LOCALE, next)
   }
 
   function toggleImages(): void {
@@ -73,6 +56,13 @@ export function useReader(rawPiece: unknown): {
     }
   }
 
+  watch(
+    () => episode.value?.id,
+    () => {
+      index.value = 0
+    },
+  )
+
   onMounted(() => {
     window.addEventListener('keydown', onKey)
   })
@@ -81,5 +71,5 @@ export function useReader(rawPiece: unknown): {
     window.removeEventListener('keydown', onKey)
   })
 
-  return { piece, scenes, index, locale, imagesOn, scene, go, goTo, toggleLocale, toggleImages }
+  return { episode, scenes, index, imagesOn, scene, go, goTo, toggleImages }
 }

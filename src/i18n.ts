@@ -1,4 +1,4 @@
-import type { Locale } from '@/types/piece'
+import type { Locale } from '@/types/library'
 import type { Theme } from '@/theme'
 
 interface Copy {
@@ -12,6 +12,8 @@ interface Copy {
   themeToLight: string
   synthetic: string
   empty: string
+  library: string
+  missingEpisode: string
 }
 
 const copy: Record<Locale, Copy> = {
@@ -25,7 +27,9 @@ const copy: Record<Locale, Copy> = {
     themeToDark: 'Koyu tema',
     themeToLight: 'Açık tema',
     synthetic: 'Sentetik demo',
-    empty: 'Sahne yok. content/piece.json dosyasını doldur.',
+    empty: 'Bu bölümde sahne yok. source.md dosyasını parse et veya episode.json doldur.',
+    library: 'Ne okuyorsun?',
+    missingEpisode: 'Bölüm bulunamadı.',
   },
   en: {
     scene: 'Scene',
@@ -37,7 +41,9 @@ const copy: Record<Locale, Copy> = {
     themeToDark: 'Dark theme',
     themeToLight: 'Light theme',
     synthetic: 'Synthetic demo',
-    empty: 'No scenes. Fill content/piece.json.',
+    empty: 'No scenes in this episode. Parse source.md or fill episode.json.',
+    library: 'What are you reading?',
+    missingEpisode: 'Episode not found.',
   },
 }
 

@@ -16,7 +16,9 @@ const emit = defineEmits<{
 <template>
   <header class="border-b border-line bg-page/80">
     <div class="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-      <p class="text-base font-medium tracking-tight">Meddah</p>
+      <RouterLink to="/" class="cursor-pointer text-base font-medium tracking-tight text-ink">
+        Meddah
+      </RouterLink>
       <div class="flex items-center gap-1">
         <button
           type="button"
