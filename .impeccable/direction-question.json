@@ -1,0 +1,75 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Muraqqa Leaf. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Muraqqa Leaf",
+      "kicker": "THE ROLL",
+      "lineage": "Ottoman album leaf: dark muraqqa border, one miniature, an inscription cartouche",
+      "thesis": "You are inside an open album. The plate is a jewel on lacquer; the script sits on a bone label facing it.",
+      "palette": ["#1a1410", "#c4a35a", "#2c4a6e", "#e8e0d4"],
+      "materials": ["lacquered album board", "gold sprinkle", "ruled miniature window", "bone paper label"],
+      "viewport": "Full-bleed album. Left: the scene image in a ruled window, large. Right: bone cartouche of scene text. Scene index in the dark margin. No sidebar.",
+      "risk": "Can slide into museum-vitrine Ottoman if the album becomes a frame around a card instead of the room you read in.",
+      "sketch": ".impeccable/sketches/assigned.webp"
+    },
+    {
+      "id": "challenger-centre-rail",
+      "label": "Centre-Rail Edition",
+      "kicker": "CHALLENGER",
+      "lineage": "Wide-margin scholarly setting with a vermilion centre rail of keys",
+      "thesis": "A history edition open under a lamp: plate and script as twin columns around a keyed rail of scenes.",
+      "palette": ["#e6dcc8", "#1c1916", "#9b2f2a", "#f4efe4"],
+      "materials": ["unbleached bone paper", "iron-black ink", "hairline rules", "vermilion letter-keys"],
+      "viewport": "A small type block in a wide margin. Left column the plate, right the script, a vermilion rail of scene keys between. Image-off lets the script take the measure.",
+      "risk": "Reads as philology, not telling — the meddah becomes a footnote apparatus.",
+      "case": "Wins reading-tool clarity and the image-off widen; loses audience identification to the album (scholar, not storyteller).",
+      "sketch": ".impeccable/sketches/challenger-centre-rail.webp",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting.webp"
+    },
+    {
+      "id": "challenger-swiss",
+      "label": "Swiss Poster Spread",
+      "kicker": "CHALLENGER",
+      "lineage": "Swiss International Style concert-poster wall",
+      "thesis": "Each scene is one poster on a modular grid: a photographic fragment and flush-left script, one signal bar for where you are.",
+      "palette": ["#f4f1ea", "#111111", "#c41e3a", "#ffffff"],
+      "materials": ["unprinted poster stock", "akzidenz ink", "modular grid", "geometric bars"],
+      "viewport": "A visible grid. Image as a large photographic fragment left; script set ragged-right on the module; a single red bar marks the scene.",
+      "risk": "Geometry starves the plate — images must stay strong when present.",
+      "case": "Fuses cleanly as a reading tool; weaker identification (concert posters are not this writer's home) and may shrink the image.",
+      "sketch": ".impeccable/sketches/challenger-swiss.webp",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-swiss-grid-poster-wall-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-canon-swiss-grid-poster-wall.webp"
+    },
+    {
+      "id": "challenger-cutting-bench",
+      "label": "Select Rail",
+      "kicker": "CHALLENGER",
+      "lineage": "Film cutting bench, perforated select rail, tape flags",
+      "thesis": "Scenes hang as punched frames on a grain-orange rail; the leaf you stopped on wears a folded flag.",
+      "palette": ["#0a0a0a", "#e85d04", "#f2f0e6", "#6b3f12"],
+      "materials": ["coarse film grain", "perforation", "grease pencil", "orange tape flags"],
+      "viewport": "A perforated rail of scene frames across the top; the current plate fills a punched white window; script sits in a second window. Flag on the active frame.",
+      "risk": "Becomes an editing suite — the storyboard tool they already refused.",
+      "case": "Fuses poorly because the bench is an operate surface; sequential frames are clear, the room is wrong.",
+      "sketch": ".impeccable/sketches/challenger-cutting-bench.webp",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail.webp"
+    }
+  ],
+  "reroll": true,
+  "steer": true,
+  "canon": true,
+  "canonCard": {
+    "label": "Kindle-kind reader",
+    "thesis": "A serious reading tool: type first, optional image pane, executed at full craft with no costume.",
+    "viewport": "Comfortable measure of scene text; image beside it when on, gone when off; quiet scene list. What this category ships.",
+    "palette": ["#f7f3ea", "#1a1a1a", "#5c584f", "#ffffff"],
+    "materials": ["e-ink paper", "workhorse text face", "minimal chrome"],
+    "risk": "Correct and forgettable — a reader anyone could have shipped.",
+    "sketch": ".impeccable/sketches/canon.webp"
+  }
+}

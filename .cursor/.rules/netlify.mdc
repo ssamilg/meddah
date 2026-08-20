@@ -1,0 +1,31 @@
+---
+description: Netlify deployment and configuration
+globs:
+  - "**/netlify.toml"
+  - "**/netlify/**/*.{ts,js,mjs,cjs}"
+  - "**/.netlify/**"
+  - "**/_redirects"
+  - "**/_headers"
+  - "**/netlify/functions/**/*.{ts,js,mjs,cjs}"
+alwaysApply: false
+---
+
+# Netlify Conventions
+
+- Define build settings in `netlify.toml` at the repo root — do not rely solely on the UI.
+- Set `NODE_VERSION` via `.nvmrc` or `[build.environment]` in `netlify.toml`.
+- Use Netlify Functions or Edge Functions for server-side logic; keep them in `netlify/functions/`.
+- Configure redirects and headers in `netlify.toml`, not `_redirects` files, when possible.
+- Use deploy previews for every PR — enable in Netlify site settings.
+- Store secrets in Netlify environment variables, never in the repo.
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+```

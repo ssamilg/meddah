@@ -1,0 +1,43 @@
+{
+  "id": "demo",
+  "title": "Kahvehanede bir gece",
+  "synthetic": true,
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Kapı",
+      "body": "Yağmur, Galata kenarında tahta kapıyı şişirmiş. İçeride lamba yanıyor; dışarıda boğaz kara. Bu parça sentetik bir demodr; kendi metnini content/piece.json içine yaz, görselleri public/plates altına koy.",
+      "image": "/plates/s01.svg"
+    },
+    {
+      "id": "s02",
+      "title": "Ocak",
+      "body": "Ocak başında üç adam. Biri nargile yakıyor, biri susuyor, üçüncüsü mendili dizine seriyor. Anlatı henüz başlamadı; oda bekliyor.",
+      "image": "/plates/s02.svg"
+    },
+    {
+      "id": "s03",
+      "title": "Mendil",
+      "body": "Mendil açılınca sahne değişir. Beyaz kumaş bir cadde olur, sonra bir oda, sonra bir iskele. Dinleyenler kumaşa bakmaz; kumaşın gösterdiği yere bakar.",
+      "image": "/plates/s03.svg"
+    },
+    {
+      "id": "s04",
+      "title": "İskele",
+      "body": "İskelede bir fener. Kayık bağlı, halat ıslak. Uzakta bir gemi düdüğü. Meddah, feneri tarif etmez; fenerin altında bekleyen adamı tarif eder.",
+      "image": "/plates/s04.svg"
+    },
+    {
+      "id": "s05",
+      "title": "Adam",
+      "body": "Adamın adı bu demoda yok. Senin parçada olacak. Şimdilik duruyor, yakaya çekilmiş paltosuyla, cevabı henüz verilmemiş bir sorunun içinde.",
+      "image": "/plates/s05.svg"
+    },
+    {
+      "id": "s06",
+      "title": "Sessizlik",
+      "body": "Kahvehanede kimse alkışlamaz. Anlatı biter, lamba aynı yerde yanar. Görselleri kapatırsan bu sahneyi kendin kurarsın. Açık bırakırsan levha konuşur.",
+      "image": "/plates/s06.svg"
+    }
+  ]
+}

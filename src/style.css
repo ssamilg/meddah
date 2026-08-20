@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+@plugin 'daisyui';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --color-page: #f6f5f2;
+  --color-panel: #ffffff;
+  --color-ink: #1c1917;
+  --color-mute: #78716c;
+  --color-line: #e7e5e4;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
