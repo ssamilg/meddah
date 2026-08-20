@@ -1,67 +1,74 @@
 <script setup lang="ts">
+import { ChevronLeft, ChevronRight } from '@lucide/vue'
 import rawPiece from '../content/piece.json'
+import AppNav from '@/components/AppNav.vue'
+import BookBar from '@/components/BookBar.vue'
 import SceneRail from '@/components/SceneRail.vue'
 import SceneStage from '@/components/SceneStage.vue'
 import { useReader } from '@/composables/useReader'
-import { uiCopy } from '@/i18n'
+import { useTheme } from '@/composables/useTheme'
+import { themeLabel, uiCopy } from '@/i18n'
 import { computed } from 'vue'
 
 const { piece, scenes, index, locale, imagesOn, scene, go, goTo, toggleLocale, toggleImages } =
   useReader(rawPiece)
+const { theme, toggleTheme } = useTheme()
 
 const copy = computed(() => uiCopy(locale.value))
-const sceneCount = computed(() => {
-  const label = `${index.value + 1} / ${scenes.length}`
-  return label
-})
+const themeButtonLabel = computed(() => themeLabel(locale.value, theme.value))
+const imagesLabel = computed(() => (imagesOn.value ? copy.value.imagesOn : copy.value.imagesOff))
 </script>
 
 <template>
-  <div class="min-h-dvh bg-page text-ink">
-    <div class="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6">
-      <header class="flex items-baseline justify-between gap-3">
-        <div class="flex items-baseline gap-2">
-          <p class="text-sm font-medium">Meddah</p>
-          <p v-if="piece" class="text-sm text-mute">{{ piece.title }}</p>
-          <p v-if="piece?.synthetic" class="text-xs text-mute">{{ copy.synthetic }}</p>
+  <div class="flex min-h-dvh flex-col bg-page text-ink">
+    <AppNav
+      :language="copy.language"
+      :theme-label="themeButtonLabel"
+      :theme="theme"
+      @locale="toggleLocale"
+      @theme="toggleTheme"
+    />
+
+    <div class="flex flex-1 flex-col justify-center px-4 py-8">
+      <div class="mx-auto w-full max-w-5xl">
+        <BookBar
+          v-if="piece"
+          :title="piece.title"
+          :synthetic="piece.synthetic"
+          :synthetic-label="copy.synthetic"
+          :images-on="imagesOn"
+          :images-label="imagesLabel"
+          @images="toggleImages"
+        />
+
+        <SceneStage :scene="scene" :images-on="imagesOn" :empty="copy.empty" />
+
+        <div class="mt-4 flex items-center justify-center gap-4 text-[15px]">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 text-ink disabled:text-mute/50"
+            :disabled="index === 0"
+            @click="go(-1)"
+          >
+            <ChevronLeft :size="16" :stroke-width="1.75" />
+            {{ copy.prev }}
+          </button>
+          <SceneRail
+            :scenes="scenes"
+            :index="index"
+            :scene-label="copy.scene"
+            @select="goTo"
+          />
+          <button
+            type="button"
+            class="flex items-center gap-1.5 text-ink disabled:text-mute/50"
+            :disabled="index >= scenes.length - 1"
+            @click="go(1)"
+          >
+            {{ copy.next }}
+            <ChevronRight :size="16" :stroke-width="1.75" />
+          </button>
         </div>
-      </header>
-
-      <SceneRail :scenes="scenes" :index="index" :scene-label="copy.scene" @select="goTo" />
-
-      <SceneStage
-        :scene="scene"
-        :images-on="imagesOn"
-        :scene-label="copy.scene"
-        :index="index"
-        :empty="copy.empty"
-      />
-
-      <div class="flex flex-wrap items-center justify-center gap-2">
-        <button
-          type="button"
-          class="btn btn-sm btn-ghost"
-          :disabled="index === 0"
-          @click="go(-1)"
-        >
-          {{ copy.prev }}
-        </button>
-        <p class="min-w-14 text-center text-sm text-mute">{{ sceneCount }}</p>
-        <button
-          type="button"
-          class="btn btn-sm btn-ghost"
-          :disabled="index >= scenes.length - 1"
-          @click="go(1)"
-        >
-          {{ copy.next }}
-        </button>
-        <span class="mx-1 h-4 w-px bg-line" aria-hidden="true" />
-        <button type="button" class="btn btn-sm btn-ghost" @click="toggleImages">
-          {{ imagesOn ? copy.imagesOn : copy.imagesOff }}
-        </button>
-        <button type="button" class="btn btn-sm btn-ghost" @click="toggleLocale">
-          {{ copy.language }}
-        </button>
       </div>
     </div>
   </div>
