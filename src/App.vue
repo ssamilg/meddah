@@ -43,10 +43,10 @@ const imagesLabel = computed(() => (imagesOn.value ? copy.value.imagesOn : copy.
 
         <SceneStage :scene="scene" :images-on="imagesOn" :empty="copy.empty" />
 
-        <div class="mt-4 flex items-center justify-center gap-4 text-[15px]">
+        <div class="mt-4 flex items-center justify-center gap-4 text-base">
           <button
             type="button"
-            class="flex items-center gap-1.5 text-ink disabled:text-mute/50"
+            class="flex cursor-pointer items-center gap-1.5 text-ink disabled:cursor-not-allowed disabled:text-mute/50"
             :disabled="index === 0"
             @click="go(-1)"
           >
@@ -61,7 +61,7 @@ const imagesLabel = computed(() => (imagesOn.value ? copy.value.imagesOn : copy.
           />
           <button
             type="button"
-            class="flex items-center gap-1.5 text-ink disabled:text-mute/50"
+            class="flex cursor-pointer items-center gap-1.5 text-ink disabled:cursor-not-allowed disabled:text-mute/50"
             :disabled="index >= scenes.length - 1"
             @click="go(1)"
           >

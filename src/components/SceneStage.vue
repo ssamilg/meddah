@@ -26,13 +26,13 @@ defineProps<{
       />
     </figure>
     <article
-      class="paper h-[min(24rem,48vh)] overflow-auto rounded-md px-6 py-5 font-read md:h-[min(32rem,58vh)] md:px-8 md:py-7"
+      class="paper h-[min(24rem,48vh)] overflow-auto rounded-md px-7 py-6 font-read md:h-[min(32rem,58vh)] md:px-9 md:py-8"
       :class="imagesOn ? '' : 'mx-auto w-full max-w-2xl'"
     >
       <p v-if="!scene" class="text-base/7 text-mute">{{ empty }}</p>
       <div v-else :key="scene.id" class="scene-fade">
-        <h1 class="font-sans text-xl/7 font-medium">{{ scene.title }}</h1>
-        <p class="mt-4 max-w-[70ch] text-[17px]/8">{{ scene.body }}</p>
+        <h1 class="font-sans text-2xl/8 font-medium">{{ scene.title }}</h1>
+        <p class="mt-4 max-w-[70ch] text-lg/8">{{ scene.body }}</p>
       </div>
     </article>
   </div>

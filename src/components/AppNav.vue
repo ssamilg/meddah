@@ -14,20 +14,20 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <header class="border-b border-line bg-page">
+  <header class="border-b border-line bg-page/80">
     <div class="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-      <p class="text-[15px] font-medium tracking-tight">Meddah</p>
+      <p class="text-base font-medium tracking-tight">Meddah</p>
       <div class="flex items-center gap-1">
         <button
           type="button"
-          class="h-9 px-2 text-[13px] text-mute hover:text-ink"
+          class="h-9 cursor-pointer px-2 text-sm text-mute hover:text-ink"
           @click="emit('locale')"
         >
           {{ language }}
         </button>
         <button
           type="button"
-          class="flex size-9 items-center justify-center text-mute hover:text-ink"
+          class="flex size-9 cursor-pointer items-center justify-center text-mute hover:text-ink"
           :aria-label="themeLabel"
           @click="emit('theme')"
         >
