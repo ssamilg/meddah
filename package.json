@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "parse-md": "node scripts/parse-md.mjs",
+    "desk": "vite --config desk/vite.config.ts",
+    "new-show": "node scripts/new-show.mjs",
+    "new-episode": "node scripts/new-episode.mjs"
   },
   "dependencies": {
     "@lucide/vue": "^1.33.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",

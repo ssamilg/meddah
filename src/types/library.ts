@@ -2,8 +2,11 @@ export const STAGE_TEMPLATES = ['spread', 'stack'] as const
 
 export type StageTemplate = (typeof STAGE_TEMPLATES)[number]
 
+export type ContentStatus = 'draft' | 'ready'
+
 export interface Scene {
   id: string
+  slug: string
   title: string
   body: string
   image?: string
@@ -11,34 +14,48 @@ export interface Scene {
 
 export interface Episode {
   id: string
+  slug: string
   showId: string
   title: string
   template?: StageTemplate
   synthetic?: boolean
+  createdAt: string
+  updatedAt: string
   scenes: Scene[]
 }
 
 export interface ShowEpisodeRef {
   id: string
+  slug: string
   title: string
 }
 
 export interface Show {
   id: string
+  slug: string
   title: string
+  cover?: string
   template?: StageTemplate
   synthetic?: boolean
+  status?: ContentStatus
+  createdAt: string
+  updatedAt: string
   episodes: ShowEpisodeRef[]
 }
 
 export interface Catalog {
-  shows: Array<{ id: string; title: string }>
+  shows: Array<{ id: string; slug: string; title: string }>
 }
 
 export type Locale = 'tr' | 'en'
 
 export function isStageTemplate(value: unknown): value is StageTemplate {
   const ok = value === 'spread' || value === 'stack'
+  return ok
+}
+
+export function isContentStatus(value: unknown): value is ContentStatus {
+  const ok = value === 'draft' || value === 'ready'
   return ok
 }
 
@@ -52,6 +69,11 @@ export function resolveTemplate(episode: Episode | null, show: Show | null): Sta
   return template
 }
 
+function isIsoStamp(value: unknown): boolean {
+  const ok = typeof value === 'string' && value.length > 0
+  return ok
+}
+
 export function isScene(value: unknown): value is Scene {
   const record = value as Record<string, unknown> | null
   const image = record?.image
@@ -60,6 +82,7 @@ export function isScene(value: unknown): value is Scene {
     typeof value === 'object' &&
     value !== null &&
     typeof record?.id === 'string' &&
+    typeof record.slug === 'string' &&
     typeof record.title === 'string' &&
     typeof record.body === 'string' &&
     imageOk
@@ -76,8 +99,11 @@ export function isEpisode(value: unknown): value is Episode {
     typeof value === 'object' &&
     value !== null &&
     typeof record?.id === 'string' &&
+    typeof record.slug === 'string' &&
     typeof record.showId === 'string' &&
     typeof record.title === 'string' &&
+    isIsoStamp(record?.createdAt) &&
+    isIsoStamp(record?.updatedAt) &&
     syntheticOk &&
     templateOk &&
     scenesOk
@@ -95,18 +121,26 @@ export function isShow(value: unknown): value is Show {
         typeof item === 'object' &&
         item !== null &&
         typeof row?.id === 'string' &&
+        typeof row.slug === 'string' &&
         typeof row.title === 'string'
       return rowOk
     })
   const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
   const templateOk = record?.template === undefined || isStageTemplate(record.template)
+  const coverOk = record?.cover === undefined || typeof record.cover === 'string'
+  const statusOk = record?.status === undefined || isContentStatus(record.status)
   const ok =
     typeof value === 'object' &&
     value !== null &&
     typeof record?.id === 'string' &&
+    typeof record.slug === 'string' &&
     typeof record.title === 'string' &&
+    isIsoStamp(record?.createdAt) &&
+    isIsoStamp(record?.updatedAt) &&
     syntheticOk &&
     templateOk &&
+    coverOk &&
+    statusOk &&
     episodesOk
   return ok
 }
@@ -122,6 +156,7 @@ export function isCatalog(value: unknown): value is Catalog {
         typeof item === 'object' &&
         item !== null &&
         typeof row?.id === 'string' &&
+        typeof row.slug === 'string' &&
         typeof row.title === 'string'
       return rowOk
     })
@@ -131,6 +166,12 @@ export function isCatalog(value: unknown): value is Catalog {
 
 export function sceneImage(scene: Scene | undefined): string | undefined {
   const raw = scene?.image?.trim()
+  const path = raw === '' ? undefined : raw
+  return path
+}
+
+export function showCover(show: Show | undefined): string | undefined {
+  const raw = show?.cover?.trim()
   const path = raw === '' ? undefined : raw
   return path
 }

@@ -21,7 +21,7 @@ const shows = loadLibrary()
         <ul>
           <li v-for="episode in show.episodes" :key="episode.id">
             <RouterLink
-              :to="{ name: 'read', params: { showId: show.id, episodeId: episode.id } }"
+              :to="{ name: 'read', params: { showSlug: show.slug, episodeSlug: episode.slug } }"
               class="block cursor-pointer py-1.5 text-ink hover:text-mute"
             >
               {{ episode.title }}

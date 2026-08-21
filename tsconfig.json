@@ -21,8 +21,18 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@desk/*": ["desk/src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.d.ts", "content/**/*.json"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "desk/**/*.ts",
+    "desk/**/*.vue",
+    "desk/**/*.d.ts",
+    "content/**/*.json"
+  ],
+  "exclude": ["desk/vite.config.ts", "desk/plugin.ts"]
 }

@@ -18,14 +18,14 @@ const { locale } = useLocale()
 const copy = computed(() => uiCopy(locale.value))
 
 const episode = computed(() => {
-  const showId = String(route.params.showId ?? '')
-  const episodeId = String(route.params.episodeId ?? '')
-  return loadEpisode(showId, episodeId)
+  const showSlug = String(route.params.showSlug ?? '')
+  const episodeSlug = String(route.params.episodeSlug ?? '')
+  return loadEpisode(showSlug, episodeSlug)
 })
 
 const show = computed(() => {
-  const showId = String(route.params.showId ?? '')
-  return loadShow(showId)
+  const showSlug = String(route.params.showSlug ?? '')
+  return loadShow(showSlug)
 })
 
 const { scenes, index, imagesOn, scene, go, goTo, toggleImages } = useReader(episode)
