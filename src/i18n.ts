@@ -14,6 +14,10 @@ interface Copy {
   empty: string
   library: string
   missingEpisode: string
+  inspect: string
+  close: string
+  textSmaller: string
+  textBigger: string
 }
 
 const copy: Record<Locale, Copy> = {
@@ -30,6 +34,10 @@ const copy: Record<Locale, Copy> = {
     empty: 'Bu bölümde sahne yok. source.md dosyasını parse et veya episode.json doldur.',
     library: 'Ne okuyorsun?',
     missingEpisode: 'Bölüm bulunamadı.',
+    inspect: 'Görseli incele',
+    close: 'Kapat',
+    textSmaller: 'Yazıyı küçült',
+    textBigger: 'Yazıyı büyüt',
   },
   en: {
     scene: 'Scene',
@@ -44,6 +52,10 @@ const copy: Record<Locale, Copy> = {
     empty: 'No scenes in this episode. Parse source.md or fill episode.json.',
     library: 'What are you reading?',
     missingEpisode: 'Episode not found.',
+    inspect: 'Inspect image',
+    close: 'Close',
+    textSmaller: 'Decrease text size',
+    textBigger: 'Increase text size',
   },
 }
 

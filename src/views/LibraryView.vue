@@ -10,8 +10,8 @@ const shows = loadLibrary()
 </script>
 
 <template>
-  <div class="flex flex-1 justify-center px-4 py-10">
-    <div class="w-full max-w-xl">
+  <div class="flex min-h-0 flex-1 overflow-auto px-4">
+    <div class="m-auto w-full max-w-xl py-10">
       <h1 class="mb-6 text-xl font-medium">{{ copy.library }}</h1>
       <section v-for="show in shows" :key="show.id" class="mb-8">
         <h2 class="mb-2 text-base text-mute">

@@ -1,3 +1,7 @@
+export const STAGE_TEMPLATES = ['spread', 'stack'] as const
+
+export type StageTemplate = (typeof STAGE_TEMPLATES)[number]
+
 export interface Scene {
   id: string
   title: string
@@ -9,6 +13,7 @@ export interface Episode {
   id: string
   showId: string
   title: string
+  template?: StageTemplate
   synthetic?: boolean
   scenes: Scene[]
 }
@@ -21,6 +26,7 @@ export interface ShowEpisodeRef {
 export interface Show {
   id: string
   title: string
+  template?: StageTemplate
   synthetic?: boolean
   episodes: ShowEpisodeRef[]
 }
@@ -30,6 +36,21 @@ export interface Catalog {
 }
 
 export type Locale = 'tr' | 'en'
+
+export function isStageTemplate(value: unknown): value is StageTemplate {
+  const ok = value === 'spread' || value === 'stack'
+  return ok
+}
+
+export function stageTemplate(value: unknown): StageTemplate {
+  const template = isStageTemplate(value) ? value : 'spread'
+  return template
+}
+
+export function resolveTemplate(episode: Episode | null, show: Show | null): StageTemplate {
+  const template = stageTemplate(episode?.template ?? show?.template)
+  return template
+}
 
 export function isScene(value: unknown): value is Scene {
   const record = value as Record<string, unknown> | null
@@ -50,6 +71,7 @@ export function isEpisode(value: unknown): value is Episode {
   const scenes = record?.scenes
   const scenesOk = Array.isArray(scenes) && scenes.every(isScene)
   const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
+  const templateOk = record?.template === undefined || isStageTemplate(record.template)
   const ok =
     typeof value === 'object' &&
     value !== null &&
@@ -57,6 +79,7 @@ export function isEpisode(value: unknown): value is Episode {
     typeof record.showId === 'string' &&
     typeof record.title === 'string' &&
     syntheticOk &&
+    templateOk &&
     scenesOk
   return ok
 }
@@ -76,12 +99,14 @@ export function isShow(value: unknown): value is Show {
       return rowOk
     })
   const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
+  const templateOk = record?.template === undefined || isStageTemplate(record.template)
   const ok =
     typeof value === 'object' &&
     value !== null &&
     typeof record?.id === 'string' &&
     typeof record.title === 'string' &&
     syntheticOk &&
+    templateOk &&
     episodesOk
   return ok
 }

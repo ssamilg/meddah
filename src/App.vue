@@ -12,14 +12,17 @@ const themeButtonLabel = computed(() => themeLabel(locale.value, theme.value))
 </script>
 
 <template>
-  <div class="flex min-h-dvh flex-col bg-page text-ink">
+  <div class="flex h-dvh flex-col overflow-hidden bg-page text-ink">
     <AppNav
+      class="shrink-0"
       :language="copy.language"
       :theme-label="themeButtonLabel"
       :theme="theme"
       @locale="toggleLocale"
       @theme="toggleTheme"
     />
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <component :is="Component" class="flex min-h-0 flex-1 flex-col" />
+    </RouterView>
   </div>
 </template>
