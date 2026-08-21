@@ -11,6 +11,7 @@ const router = useRouter()
 const title = ref('')
 const template = ref<'spread' | 'stack' | ''>('')
 const cover = ref('')
+const summary = ref('')
 const busy = ref(false)
 const slug = computed(() => slugify(title.value))
 
@@ -22,6 +23,7 @@ async function create(): Promise<void> {
       slug: slug.value,
       template: template.value || undefined,
       cover: cover.value || undefined,
+      summary: summary.value || undefined,
     })
     const created = result.show as { slug: string }
     notify('success', 'Scaffold created')
@@ -52,6 +54,10 @@ async function create(): Promise<void> {
           <option value="spread">spread</option>
           <option value="stack">stack</option>
         </select>
+      </div>
+      <div>
+        <label>Summary</label>
+        <textarea v-model="summary" class="min-h-24 w-full" />
       </div>
       <div>
         <label>Cover path</label>

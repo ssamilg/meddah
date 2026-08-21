@@ -104,6 +104,13 @@ function onDraftTemplate(id: string, event: Event): void {
   }
 }
 
+function onSummary(event: Event): void {
+  const target = event.target as HTMLTextAreaElement
+  if (show.value) {
+    show.value.summary = target.value
+  }
+}
+
 async function load(): Promise<void> {
   const data = await api.show(slug)
   show.value = data.show as Show
@@ -257,6 +264,14 @@ onMounted(() => {
       <div>
         <label>Title</label>
         <input v-model="show.title" class="w-full" />
+      </div>
+      <div>
+        <label>Summary</label>
+        <textarea
+          class="min-h-24 w-full"
+          :value="show.summary ?? ''"
+          @input="onSummary"
+        />
       </div>
       <div>
         <label>Template</label>

@@ -19,6 +19,8 @@ interface Copy {
   synthetic: string
   empty: string
   library: string
+  libraryShows: string
+  emptyLibrary: string
   missingEpisode: string
   inspect: string
   close: string
@@ -47,6 +49,8 @@ const copy: Record<Locale, Copy> = {
     synthetic: 'Sentetik demo',
     empty: 'Bu bölümde sahne yok. source.md dosyasını parse et veya episode.json doldur.',
     library: 'Ne okuyorsun?',
+    libraryShows: 'Parçalar',
+    emptyLibrary: 'Henüz yayında bir parça yok.',
     missingEpisode: 'Bölüm bulunamadı.',
     inspect: 'Görseli incele',
     close: 'Kapat',
@@ -73,6 +77,8 @@ const copy: Record<Locale, Copy> = {
     synthetic: 'Synthetic demo',
     empty: 'No scenes in this episode. Parse source.md or fill episode.json.',
     library: 'What are you reading?',
+    libraryShows: 'Pieces',
+    emptyLibrary: 'No published pieces yet.',
     missingEpisode: 'Episode not found.',
     inspect: 'Inspect image',
     close: 'Close',

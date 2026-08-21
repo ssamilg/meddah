@@ -34,6 +34,7 @@ export interface Show {
   id: string
   slug: string
   title: string
+  summary?: string
   cover?: string
   template?: StageTemplate
   synthetic?: boolean
@@ -133,6 +134,7 @@ export function isShow(value: unknown): value is Show {
   const syntheticOk = record?.synthetic === undefined || typeof record.synthetic === 'boolean'
   const templateOk = record?.template === undefined || isStageTemplate(record.template)
   const coverOk = record?.cover === undefined || typeof record.cover === 'string'
+  const summaryOk = record?.summary === undefined || typeof record.summary === 'string'
   const statusOk = record?.status === undefined || isContentStatus(record.status)
   const ok =
     typeof value === 'object' &&
@@ -145,6 +147,7 @@ export function isShow(value: unknown): value is Show {
     syntheticOk &&
     templateOk &&
     coverOk &&
+    summaryOk &&
     statusOk &&
     episodesOk
   return ok
@@ -173,6 +176,12 @@ export function sceneImage(scene: Scene | undefined): string | undefined {
   const raw = scene?.image?.trim()
   const path = raw === '' ? undefined : raw
   return path
+}
+
+export function showSummary(show: Show | undefined): string | undefined {
+  const raw = show?.summary?.trim()
+  const text = raw === '' ? undefined : raw
+  return text
 }
 
 export function showCover(show: Show | undefined): string | undefined {
