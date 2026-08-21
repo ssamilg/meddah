@@ -33,7 +33,10 @@ function move(delta: number): void {
     const i = shows.findIndex((show) => show.id === selectedId.value)
     const from = i >= 0 ? i : 0
     const next = (from + delta + count) % count
-    selectedId.value = shows[next].id
+    const show = shows[next]
+    if (show) {
+      selectedId.value = show.id
+    }
   }
 }
 

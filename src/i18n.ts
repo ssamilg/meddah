@@ -28,6 +28,9 @@ interface Copy {
   textBigger: string
   readFont: string
   edit: string
+  landingQuote: string
+  landingEnter: string
+  landingAspects: [string, string, string, string]
 }
 
 const copy: Record<Locale, Copy> = {
@@ -58,6 +61,14 @@ const copy: Record<Locale, Copy> = {
     textBigger: 'Yazıyı büyüt',
     readFont: 'Yazı tipi',
     edit: 'Düzenle',
+    landingQuote: 'Tek başına hikâye sahneleyen anlatıcı.',
+    landingEnter: 'Söz başlasın',
+    landingAspects: [
+      'Sahne sahne okunur',
+      'Yazı levhayla durur',
+      'Parça biter dağılmaz',
+      'Anlatı sükûn bulur',
+    ],
   },
   en: {
     scene: 'Scene',
@@ -86,6 +97,14 @@ const copy: Record<Locale, Copy> = {
     textBigger: 'Increase text size',
     readFont: 'Typeface',
     edit: 'Edit',
+    landingQuote: 'A teller who stages a story alone.',
+    landingEnter: 'Let the telling begin',
+    landingAspects: [
+      'Read it now scene by scene',
+      'Word and plate both convene',
+      'The piece holds, not scattered',
+      'The telling stays serene',
+    ],
   },
 }
 

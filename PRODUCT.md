@@ -26,7 +26,7 @@ The app performs the piece: it is the meddah, not a storyboard manager, not an i
 
 ## Operating Context
 
-The writer already has a history script and a folder of generated scene images. They will keep scene text in git (JSON or Markdown) and point the reader at a local image folder. There is no account, no share sheet, no marketing site in this version.
+The writer already has a history script and a folder of generated scene images. They will keep scene text in git (JSON or Markdown) and point the reader at a local image folder. There is no account and no share sheet. First visit opens `/landing` once; after that the library is the front door.
 
 ## Capabilities and Constraints
 
@@ -40,6 +40,8 @@ The writer already has a history script and a folder of generated scene images. 
 
 Name is **Meddah**, after the Ottoman storyteller who performs a tale for a room. Sibling names in the maker's line: çetele, vird, notos, carar. Turkish wordplay and short Latin/Greek-feel names are the register; English SaaS descriptiveness is not. Temaşa was a strong alternate (the watching) and was set aside because Tamasha is already a large streaming brand, and because the product is the teller.
 
+The public welcome is the familiar form: the name, one line, a door. It is not a marketing site and not a theatrical set. Do not benchmark it against other products; it must sound like this room.
+
 ## Evidence on Hand
 
 The writer has an unpublished history script and AI-generated scene images. Paths are not in this repo yet. Do not invent that the piece is published, awarded, or historically authoritative. Any demonstration story that is not theirs must be labeled synthetic.
@@ -49,5 +51,5 @@ The writer has an unpublished history script and AI-generated scene images. Path
 - The telling is the product. Chrome, libraries, and file management stay out of the way of the next scene.
 - Content files in git are the source of truth for text; the UI does not become a CMS.
 - Local-first until a bucket is actually needed.
-- Named and crafted enough to feel finished; not a company, not a landing page, not a half-launched platform.
+- Named and crafted enough to feel finished; not a company, not a marketing site, not a half-launched platform. The one-time welcome at `/landing` is a door, not a pitch.
 - Turkish is the home voice of the interface.

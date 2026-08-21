@@ -38,6 +38,7 @@ const showTitle = computed(() => {
 <template>
   <div class="flex h-dvh flex-col overflow-hidden bg-page text-ink">
     <AppNav
+      v-if="route.name !== 'landing'"
       class="shrink-0"
       :language="copy.language"
       :theme-label="themeButtonLabel"
