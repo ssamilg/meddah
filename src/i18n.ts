@@ -18,6 +18,8 @@ interface Copy {
   close: string
   textSmaller: string
   textBigger: string
+  readFont: string
+  edit: string
 }
 
 const copy: Record<Locale, Copy> = {
@@ -38,6 +40,8 @@ const copy: Record<Locale, Copy> = {
     close: 'Kapat',
     textSmaller: 'Yazıyı küçült',
     textBigger: 'Yazıyı büyüt',
+    readFont: 'Yazı tipi',
+    edit: 'Düzenle',
   },
   en: {
     scene: 'Scene',
@@ -56,6 +60,8 @@ const copy: Record<Locale, Copy> = {
     close: 'Close',
     textSmaller: 'Decrease text size',
     textBigger: 'Increase text size',
+    readFont: 'Typeface',
+    edit: 'Edit',
   },
 }
 

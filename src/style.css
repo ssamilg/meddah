@@ -6,6 +6,7 @@
 @theme {
   --font-sans: 'Onest', ui-sans-serif, system-ui, sans-serif;
   --font-read: 'Courier Prime', ui-monospace, 'Cascadia Code', monospace;
+  --font-literata: 'Literata', 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
   --color-page: var(--meddah-page);
   --color-paper: var(--meddah-paper);
   --color-well: var(--meddah-well);

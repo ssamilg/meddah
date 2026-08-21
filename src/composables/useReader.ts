@@ -1,5 +1,5 @@
 import { computed, onMounted, onUnmounted, ref, watch, type Ref } from 'vue'
-import type { Episode, Scene } from '@/types/library'
+import { sceneImage, type Episode, type Scene } from '@/types/library'
 
 const STORAGE_IMAGES = 'meddah.imagesOn'
 
@@ -34,10 +34,19 @@ export function useReader(episode: Ref<Episode | null>): {
     goTo(index.value + delta)
   }
 
+  function indexFromHash(): number {
+    const id = window.location.hash.replace(/^#/, '')
+    const found = scenes.value.findIndex((row) => row.id === id)
+    const next = found >= 0 ? found : 0
+    return next
+  }
+
   function toggleImages(): void {
-    const next = !imagesOn.value
-    imagesOn.value = next
-    window.localStorage.setItem(STORAGE_IMAGES, next ? '1' : '0')
+    if (sceneImage(scene.value)) {
+      const next = !imagesOn.value
+      imagesOn.value = next
+      window.localStorage.setItem(STORAGE_IMAGES, next ? '1' : '0')
+    }
   }
 
   function onKey(event: KeyboardEvent): void {
@@ -59,8 +68,9 @@ export function useReader(episode: Ref<Episode | null>): {
   watch(
     () => episode.value?.id,
     () => {
-      index.value = 0
+      index.value = indexFromHash()
     },
+    { immediate: true },
   )
 
   onMounted(() => {

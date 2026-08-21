@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Images, ImageOff } from '@lucide/vue'
+import { READ_FONTS, type ReadFont } from '@/composables/useReadFont'
 
 defineProps<{
   title: string
@@ -7,17 +8,35 @@ defineProps<{
   syntheticLabel: string
   imagesOn: boolean
   imagesLabel: string
+  hasImage: boolean
   smallerLabel: string
   biggerLabel: string
   canSmaller: boolean
   canBigger: boolean
+  font: ReadFont
+  fontLabel: string
 }>()
 
 const emit = defineEmits<{
   images: []
   smaller: []
   bigger: []
+  font: [value: ReadFont]
 }>()
+
+function onFont(event: Event): void {
+  const target = event.target as HTMLSelectElement
+  const value = target.value
+  if (value === 'sans' || value === 'mono' || value === 'serif') {
+    emit('font', value)
+  }
+}
+
+const fontNames: Record<ReadFont, string> = {
+  sans: 'Onest',
+  mono: 'Courier',
+  serif: 'Literata',
+}
 </script>
 
 <template>
@@ -27,6 +46,16 @@ const emit = defineEmits<{
       <p v-if="synthetic" class="text-sm text-mute">{{ syntheticLabel }}</p>
     </div>
     <div class="flex shrink-0 items-center gap-1">
+      <label class="sr-only" :for="'read-font'">{{ fontLabel }}</label>
+      <select
+        id="read-font"
+        class="h-9 max-w-28 cursor-pointer border-0 bg-transparent p-0 font-sans text-sm text-mute shadow-none hover:text-ink"
+        :value="font"
+        :aria-label="fontLabel"
+        @change="onFont"
+      >
+        <option v-for="id in READ_FONTS" :key="id" :value="id">{{ fontNames[id] }}</option>
+      </select>
       <button
         type="button"
         class="flex h-9 min-w-8 cursor-pointer items-center justify-center px-1.5 font-sans text-sm text-mute hover:text-ink disabled:text-mute/40"
@@ -46,6 +75,7 @@ const emit = defineEmits<{
         A+
       </button>
       <button
+        v-if="hasImage"
         type="button"
         class="flex cursor-pointer items-center gap-1.5 px-1.5 text-sm text-mute hover:text-ink"
         :aria-pressed="imagesOn"
