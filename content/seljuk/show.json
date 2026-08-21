@@ -1,0 +1,27 @@
+{
+  "id": "640155fe-3635-4461-afbe-2f50e4333da4",
+  "slug": "seljuk",
+  "title": "Al-i Selçuk",
+  "createdAt": "2026-08-21T13:42:16.772Z",
+  "updatedAt": "2026-08-21T21:25:06.438Z",
+  "episodes": [
+    {
+      "id": "e46fbde3-c88d-459e-ac7c-700d23456632",
+      "slug": "giriş-al-i-selçuk",
+      "title": "Giriş: Bozkırın Anatomisi"
+    },
+    {
+      "id": "4db3907c-82ec-45c7-af91-938aa90e4944",
+      "slug": "ep1",
+      "title": "Bölüm 1: Kopuş"
+    },
+    {
+      "id": "aa28161a-4a29-471c-b3b4-4db61c2f12aa",
+      "slug": "ep2",
+      "title": "Bölüm 2"
+    }
+  ],
+  "template": "stack",
+  "cover": "/plates/seljuk/cover-3.jpeg",
+  "summary": "Kınık boyunu açlığa ve her türlü düşmana karşı hayatta tutmaya çalışan iki zıt kutuplu kardeşin hikayesi. "
+}

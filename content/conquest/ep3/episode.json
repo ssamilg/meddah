@@ -1,0 +1,80 @@
+{
+  "id": "cb1f87ab-0f32-41ee-80d0-ba668238b220",
+  "slug": "ep3",
+  "showId": "1b6f0abd-22d5-4e32-bc0d-e0a24a16fb0e",
+  "title": "Bölüm 3: Hazırlıklar",
+  "createdAt": "2026-08-21T15:31:37.958Z",
+  "updatedAt": "2026-08-21T15:31:37.959Z",
+  "scenes": [
+    {
+      "id": "bf162eb9-dc56-4d85-ba65-4e376d22c52b",
+      "slug": "bölüm-3-hazırlıklar",
+      "title": "Bölüm 3 - Hazırlıklar",
+      "body": "Savaşın devasa çarkları dönmeye başlıyor; tersanelerde gemiler kızaktan iniyor, dökümhanelerde alevler harlanıyor. Harita başında kurmaylarıyla son hamleleri planlayan Fatih'in zihninde Konstantiniyye çoktan kuşatılmış, surlar aşıma hazır bekliyor.",
+      "image": "/plates/conquest/ep3/3.0.png"
+    },
+    {
+      "id": "7e03e218-2634-4cf2-8349-1606120099d0",
+      "slug": "rumeli-hisarı-nın-inşası",
+      "title": "Rumeli Hisarı'nın İnşası",
+      "body": "Boğaz'ın en dar noktasında, binlerce işçinin ve ustanın akıl almaz bir hızla çalıştığı Rumeli Hisarı yükseliyor. Sultan Mehmed'in bizzat denetlediği bu devasa yapı, Konstantiniyye'yi tamamen ablukaya alacak çelik bir halka gibi gün be gün tamamlanıyor.",
+      "image": "/plates/conquest/ep3/3.1.png"
+    },
+    {
+      "id": "6f14a78b-412f-429f-aa86-8b4036887830",
+      "slug": "urban-usta-nın-atölyesi",
+      "title": "Urban Usta'nın Atölyesi",
+      "body": "Urban Usta'nın cehennemi andıran sıcak dökümhanesinde, tarihin gördüğü en büyük topların kalıpları hazırlanıyor. Erimiş metaller ve yoğun duman arasında çalışan ustalar, Bizans surlarını paramparça edecek gücü elleriyle şekillendiriyor.",
+      "image": "/plates/conquest/ep3/3.2A.png"
+    },
+    {
+      "id": "6d3a9d7e-72e9-4cbf-afe6-c1b17ad1a7fe",
+      "slug": "tamamlanan-dev-top",
+      "title": "Tamamlanan Dev Top",
+      "body": "Atölyenin önünde devasa cüssesiyle güneş gibi parlayan Şahi topu, etrafındaki herkesi hayretler içinde bırakıyor. Bu tunç canavarın varlığı, aşılmaz denilen surların yakında yerle bir olacağının en somut habercisi olarak askerlere büyük cesaret veriyor.",
+      "image": "/plates/conquest/ep3/3.2B.png"
+    },
+    {
+      "id": "d27346df-7a5d-4d3e-a1cc-a0659242dc1d",
+      "slug": "ordu-hazırlıkları",
+      "title": "Ordu Hazırlıkları",
+      "body": "Osmanlı ordusunun her birimi, dev kuşatma için kusursuz bir disiplinle son hazırlıklarını yapıyor. Yeniçeriler askeri nizamda eğitimlerini sürdürürken, topçular gülleleri istifliyor, sipahiler ise zırhlarını kuşanarak emri bekliyor.",
+      "image": "/plates/conquest/ep3/3.3.png"
+    },
+    {
+      "id": "96220f67-d8ae-4fcd-a14e-cb4968be2cbc",
+      "slug": "deniz-hazırlıkları",
+      "title": "Deniz Hazırlıkları",
+      "body": "Gelibolu tersanesinde Baltaoğlu Süleyman Bey komutasında denizcilerin hummalı çalışmaları hız kesmeden sürüyor. Birbiri ardına donatılan kadırgalar ve rüzgarı bekleyen yelkenler, Osmanlı donanmasının fetihteki kilit rolüne hazırlanıyor.",
+      "image": "/plates/conquest/ep3/3.4.png"
+    },
+    {
+      "id": "fd1d7826-2cef-43bb-a36f-f319a0430e48",
+      "slug": "bizans-savunmasının-hazırlıkları",
+      "title": "Bizans Savunmasının Hazırlıkları",
+      "body": "Surların ardında İmparator Konstantin ve Cenevizli komutan Giustiniani, savunma hatlarını güçlendirmek için canla başla çalışıyor. Yorgun Bizans askerleri ve paralı İtalyan birlikleri, yaklaşan amansız hücuma karşı silahlarını ve surları onarıyor.",
+      "image": "/plates/conquest/ep3/3.5.png"
+    },
+    {
+      "id": "54875f83-ea4c-4718-b908-743e5024279d",
+      "slug": "bizans-ın-kilit-isimleri",
+      "title": "Bizans'ın Kilit İsimleri",
+      "body": "Şehrin kaderi, cesur komutan Giustiniani'nin kılıcında, strateji arayan Büyük Dük Notaras'ın planlarında ve Patrik Gennadios'un dualarında düğümleniyor. Her biri kendi inancıyla, çökmekte olan imparatorluğu bir gün daha yaşatmanın yollarını arıyor.",
+      "image": "/plates/conquest/ep3/3.6.png"
+    },
+    {
+      "id": "cb5159b0-db8d-4f87-ad7c-a4da5a37463f",
+      "slug": "fatih-in-son-hazırlıkları-ve-duası",
+      "title": "Fatih'in Son Hazırlıkları ve Duası",
+      "body": "Kuşatmanın arifesinde, padişah çadırının loş sessizliğinde Sultan Mehmed tek başına dua ediyor. Haritaların ve askeri planların arasında derin bir secdeye kapanan genç komutan, omuzlarındaki büyük tarihi sorumluluk için Yaradan'dan yardım diliyor.",
+      "image": "/plates/conquest/ep3/3.7.png"
+    },
+    {
+      "id": "0e9d7808-3dbf-4676-aef8-de3d978950bf",
+      "slug": "iki-tarafın-istihbarat-faaliyetleri",
+      "title": "İki Tarafın İstihbarat Faaliyetleri",
+      "body": "Top atışlarından hemen önce casusların sessiz savaşı zirveye ulaşıyor. Osmanlı çadırında casuslardan gelen bilgilerle pürüzsüz bir saldırı planı örülürken, Bizans sarayına ulaşan her haber savunmacıların yüzündeki endişeyi biraz daha artırıyor.",
+      "image": "/plates/conquest/ep3/3.8.png"
+    }
+  ]
+}

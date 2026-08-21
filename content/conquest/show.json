@@ -1,0 +1,33 @@
+{
+  "id": "1b6f0abd-22d5-4e32-bc0d-e0a24a16fb0e",
+  "slug": "conquest",
+  "title": "İstanbul'un Fethi",
+  "createdAt": "2026-08-21T13:42:16.759Z",
+  "updatedAt": "2026-08-21T17:01:39.454Z",
+  "episodes": [
+    {
+      "id": "ce27edf8-d8c9-4017-965a-372591771e61",
+      "slug": "ep0",
+      "title": "Giriş: İki Dünya Arasında"
+    },
+    {
+      "id": "590ccbc2-dcc4-49b5-8da5-daa809389c26",
+      "slug": "ep1",
+      "title": "Bölüm 1: Genç Hükümdar"
+    },
+    {
+      "id": "7c23abe6-ab86-4ae5-9ea4-729aa939ebf9",
+      "slug": "ep2",
+      "title": "Bölüm 2: Yeniden Tahta Çıkış"
+    },
+    {
+      "id": "cb1f87ab-0f32-41ee-80d0-ba668238b220",
+      "slug": "ep3",
+      "title": "Bölüm 3: Hazırlıklar"
+    }
+  ],
+  "status": "ready",
+  "cover": "/plates/conquest/cover.png",
+  "template": "stack",
+  "summary": "Konstantiniyye'nin son yüzyılı. Yirmi yaşındaki Mehmed, aşılmaz denilen surların önünde bir çağ kapatmaya hazırlanır."
+}

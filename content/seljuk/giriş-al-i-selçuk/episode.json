@@ -1,0 +1,123 @@
+{
+  "id": "e46fbde3-c88d-459e-ac7c-700d23456632",
+  "slug": "giriş-al-i-selçuk",
+  "showId": "640155fe-3635-4461-afbe-2f50e4333da4",
+  "title": "Giriş: Bozkırın Anatomisi",
+  "createdAt": "2026-08-21T19:08:25.281Z",
+  "updatedAt": "2026-08-21T21:19:38.351Z",
+  "scenes": [
+    {
+      "id": "0dfd497d-1fa5-4f4b-a482-6d74f865da6e",
+      "slug": "new-scene",
+      "title": "Al-i Selçuk",
+      "body": "Bir göçebe komutanın adıyla anılan bir hanedan. Selçuk Bey'in soyundan gelenler, henüz bir devletleri yokken bile \"Al-i Selçuk\" — Selçuk'un ailesi — diye anılırlardı. Bu dizi, o adın nasıl bir imparatorluğa dönüştüğünün hikâyesi: kılıçla değil, önce bir kopuşla başlayan bir mirasın hikâyesi.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/tamga.jpeg"
+    },
+    {
+      "id": "d03b4d69-9baa-4d73-8764-661bc558e0bc",
+      "slug": "new-scene-2",
+      "title": "Coğrafya",
+      "body": "Seyhun'un buz gibi sularından Maveraünnehir'in bereketli ovalarına, oradan Horasan'ın kavurucu çöllerine bu hikâye tek bir yurtta geçmez, bir yurt arayışında geçer. Otuz yılı aşkın bir sürede binlerce kilometre kat eden bir halkın hikâyesi, farklı devletlerin gölgesinde şekillenir.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/map.jpeg"
+    },
+    {
+      "id": "4e18c0c7-f152-4857-bb1e-72e58939e8cf",
+      "slug": "new-scene-5",
+      "title": "Kınık Boyu",
+      "body": "Oğuzların yirmi dört boyundan biri, Bozok kolundan. Kınık, at üstünde savaşmayı bilen ama devlet kurmayı henüz öğrenmemiş bir topluluktu ta ki bir adam, kendi Yabgusuna kılıç çekene kadar. Bu boy, tarihin en beklenmedik imparatorluğunun tohumunu taşıyordu.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/kinik.jpeg"
+    },
+    {
+      "id": "f4298c2a-dd79-439e-8c58-4bbf9b794149",
+      "slug": "new-scene-4",
+      "title": "Selçuk Bey",
+      "body": "Oğuz Yabgu Devleti'nin subaşısı iken bir gece ayrılık kararı alan adam. Kavmini kendi eliyle koparıp Seyhun'un ötesine, Cend'e götürdü; oradaki Müslüman Samanilerle ittifak kurup kendi halkını İslam'a yöneltti. \n\nDört oğlu vardı: Arslan, Musa, Yusuf Yınal ve en büyükleri Mikail.\nAma Mikail, babası hayattayken bir sınır savaşında şehit düştü. Selçuk Bey, öksüz kalan iki torununu, Tuğrul ve Çağrı'yı, kendi eliyle büyüttü. Öldüğünde arkasında bir devlet değil, bir mirasla dolu bir boşluk bıraktı; o mirası, ileride kanının bir bedel daha ödeyeceğini bilmeden, dört oğlundan geriye kalanlara emanet etti.\n",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/00-seljuk.jpeg"
+    },
+    {
+      "id": "ea68a583-3f05-4e1d-9911-2d475a0820fa",
+      "slug": "new-scene-3",
+      "title": "Tuğrul Bey",
+      "body": "Muhammed Tuğrul Bey b. Mikail b. Selçuk\n\nAl-i Selçuklu Devleti'nin kurucusu ve ilk sultanı olacak olan şahsiyet.\n\nSabrı bir silaha çeviren adam. Kılıç konuşmadan önce, o zaman kazanmayı bilirdi. Bir devletin kurucusu olacaksa, önce bir devlet gibi düşünmesi gerektiğini erken yaşta kavramıştı bedeli, çoğu zaman kendi kanından gelen tepkiyi yutmaktı.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/01-tugrul.jpeg"
+    },
+    {
+      "id": "8c4011f6-7ce8-4605-a69b-7cbfc62a95d1",
+      "slug": "new-scene-6",
+      "title": "Çağrı Bey",
+      "body": "Davud Çağrı Bey b. Mikail b. Selçuk\n\nDandanakan zaferinin asıl mimarı sayılan Selçuklu ordularının başkomutanı, Horasan'ın fiili hâkimi.\n\nToprağın ancak kanla ve emekle kazanılacağını bilen adam. Kardeşinin sabrına inanmaz, beklemenin de bir bedeli olduğunu düşünürdü. Onun kılıcı olmadan Tuğrul'un siyaseti hiçbir zaman gerçek bir güce dönüşemezdi. Birbirini tamamlayan, ama sürekli çatışan bir bütünün iki yarısı.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/02-cagri.jpeg"
+    },
+    {
+      "id": "868ed7d6-8cf1-4d72-9b76-7910936b60dd",
+      "slug": "new-scene-7",
+      "title": "İbrahim Yınal",
+      "body": "İbrahim Yınal b. Yusuf Yınal b. Selçuk\n\nTuğrul ve Çağrının ana bir kardeşi ve amcaoğlu. Al-i Selçuk devletinin en güçlü komutanlarından biri\n\nKanı iki kere Selçuklu'ya bağlı, ama hiçbir zaman tam olarak \"içeriden\" sayılmadı. Tuğrul ve Çağrı'yla aynı ocakta büyümüş, aynı göçü paylaşmıştı; ama töre onu hem en yakınlarına hem de en dışarıdakine aynı anda yerleştirdi. Abilerine gönülden bağlı, ancak hanedan kanı taşıyan her erkek kimsenin yarın ne getireceğini bilemediği bir sorudur.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/03-ibrahim-yinal.jpeg"
+    },
+    {
+      "id": "e029ba97-2ab1-494f-ae36-6fd7bffe1f4d",
+      "slug": "new-scene-8",
+      "title": "Musa Yabgu",
+      "body": "Musa İnanç Yabgu b. Selçuk\n\nVaroluş mücadelesinde, Tuğrul ve Çağrı'yla birlikte devletin üçlü liderliğinde yer aldı.\n\nTöre'nin gereğince boyun en büyüğü, ama artık çağın gereğine yetişemeyen bir adam. Gücün fiilen elinden kayıp gittiğini gören, buna direnmekle boyun eğmek arasında kalan bir kuşağın son temsilcisi.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/04-musa.jpeg"
+    },
+    {
+      "id": "866bfbd1-a013-464a-95c6-5104c6ac87d6",
+      "slug": "new-scene-9",
+      "title": "Arslan Yabgu",
+      "body": "Arslan İsrail Yabgu b. Selçuk\n\nSelçuk Bey'in ölümünden sonra boyun başına geçti, 1032'deki trajik ölümüne kadar ailenin demir yumruğu oldu.\n\nSelçuklu ailesinin gerçek büyüğü, Buhara'da siyasetin ince oyunlarını öğrenmiş bir adam. Yıllarca meydanlarda yiğitliğini kanıtlamış bir bozkır kurdu. Maveraünnehir'in dengelerini değiştirme kapasitesine sahip kalabalık ve liderlerine ölümüne sadık göçebe Türkmenlerden oluşan ordusunun kumandanı.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/arslan-yabgu.jpeg"
+    },
+    {
+      "id": "5906eb32-c403-4fdd-9e0d-dceb4eaea78e",
+      "slug": "new-scene-16",
+      "title": "Kutalmış",
+      "body": "Kutalmış Bey b. Arslan b. Selçuk\n\nArslan Yabgu'nun oğlu, kanında hem bir mirasın hem de bir kaybın yükünü taşıyan genç bir savaşçı. Babasının Gazneli tuzağına düşmesini önleyemeyecek, ama o acıyı bir öfkeye, o öfkeyi de kuzenlerinin — Tuğrul ve Çağrı'nın — safında yeni bir sadakate dönüştürecektir. Adı bu hikâyede bir yan karakter gibi geçse de, bir gün onun oğlu, ailenin bambaşka bir topraktaki mirasını, çok daha batıda, çok daha uzak bir ufukta sürdürecektir.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/kutalmis.jpeg"
+    },
+    {
+      "id": "2551b848-9a80-48a0-a265-b8a1d5bf4a54",
+      "slug": "new-scene-15",
+      "title": "Kan Davalısı: Oğuz Yabgusu",
+      "body": "Selçuk Bey'in bir zamanlar subaşı olarak hizmet ettiği devlet. Tengri inancını, bozkırın eski töresini taşıyan, henüz İslam'la tanışmamış bir Türk hakanlığı. Selçuk'un Yabgu'ya kılıç çekip Cend'e göçmesi ve İslam'ı seçmesi, sadece bir siyasi kopuş değil, bir inanç kopuşuydu da. Bu yara hiç kapanmadı, eski efendiye duyulan güvensizlik, kuşaklar boyunca Selçuklu'nun her yeni ittifakına gölge düşürecekti.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/oghuz-yabgu.jpeg"
+    },
+    {
+      "id": "5cf32ef3-340a-462f-9328-8a76921539e3",
+      "slug": "new-scene-14",
+      "title": "Yitik İttifak: Samaniler",
+      "body": "Selçuk Bey'in ilk müttefiki, İslam dünyasının en köklü Türk-İran devletlerinden biriydi. Ama 999 yılında Karahanlılar ve Gazneliler arasında paylaşılıp tarih sahnesinden silindiler. Selçuklu'nun ilk yurdunu veren bu ittifakın çöküşü, torunları yeni efendiler aramaya mecbur bıraktı.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/samani-emir.jpeg"
+    },
+    {
+      "id": "a5390242-5f70-4595-bcdc-97c7d318eede",
+      "slug": "new-scene-13",
+      "title": "Karahanlılar ve Şehzadelerin Hakimiyet Mücadelesi",
+      "body": "Türklerin İslam'ı devlet dini olarak kabul eden ilk hanedanı. \n\nAma bu hanedanın tuhaf bir kuralı vardı: taht tek bir hükümdara değil, bir \"ikiz kağanlık\" sistemine bağlıydı — biri doğudaki büyük kağan, diğeri ona bağlı ama kendi bölgesinde bağımsız hareket eden batıdaki küçük kağan. Bu ikili yapı, aile içi taht kavgalarını neredeyse kaçınılmaz kılıyordu.\n\nSamanilerin mirasını paylaşan Karahanlı hanedanı, kendi içinde bitmeyen bir taht kavgasına düştü İlig Han Nasr, Buğra Han, Ali Tegin gibi isimler aynı kanın farklı iddialarıydı. Selçuklu, bu kardeş kavgasının tam ortasında, kimi zaman piyon kimi zaman kazanan taraf olarak var olmayı öğrendi.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/karahanids.jpeg"
+    },
+    {
+      "id": "acdec66d-7d93-4329-819d-606ded0bfc29",
+      "slug": "new-scene-12",
+      "title": "Gazneliler ve Sultan Mahmud",
+      "body": "Hindistan'a kadar uzanan fetihleriyle \"Sultan\" unvanını ilk kullanan Türk hükümdar. Mahmud, bir zamanlar Türkmenleri kendi topraklarına aldı sonra da bu kararının bedelini oğlu Mesud'un ödeyeceğini bilmeden. Bu imparatorluğun gölgesi, Selçuklu'nun kaderini şekillendirecek en büyük güç olacaktı.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/sultan-mahmud.jpeg"
+    },
+    {
+      "id": "5b88b8ea-11eb-49ba-aed9-535392582878",
+      "slug": "new-scene-10",
+      "title": "Tarihin Ateşi",
+      "body": "Tarihi çoğumuz biliriz ancak bütün bu devletleri yutan o ateşin nasıl tutuştuğunu kimse anlatmadı.\n\nVaroluş mücadelesi veren bir boyun hikayesinden, imparatorluğun doğum sancısına.\n\nTarihin kaderi nasıl belirlencek ? Ateşi, eskilerin közünün tecrübesi mi yakacak, yoksa gençlerin kıvılcımı mı ?",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/concept-2.jpeg"
+    },
+    {
+      "id": "9ad56cd4-0c23-4427-8c2d-3a3c2ff2f5b4",
+      "slug": "new-scene-11",
+      "title": "Kapanış",
+      "body": "Bir kopuşla başlayan bu hikâye, bir imparatorluğun doğuşuyla noktalanacak. Ama önce iki kardeş, bir mirası, bir yurdu ve birbirlerini yeniden bulmak zorunda.",
+      "image": "/plates/seljuk/giriş-al-i-selçuk/concept.jpeg"
+    }
+  ],
+  "template": "stack"
+}
