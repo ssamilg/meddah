@@ -16,7 +16,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export function readerUrl(showSlug: string, episodeSlug: string): string {
-  const url = `${READER_ORIGIN}/read/${showSlug}/${episodeSlug}`
+  const url = `${READER_ORIGIN}/read/${showSlug}/${episodeSlug}?preview=1`
   return url
 }
 

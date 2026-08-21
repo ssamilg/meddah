@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   BookOpen,
+  Check,
   ChevronDown,
   ChevronRight,
   GripVertical,
@@ -172,6 +173,16 @@ async function removeEpisode(episode: ShowEpisodeRef): Promise<void> {
   }
 }
 
+async function publish(): Promise<void> {
+  try {
+    const data = await api.confirmShow(slug)
+    show.value = data.show as Show
+    notify('success', 'Published')
+  } catch (err) {
+    notify('error', err instanceof Error ? err.message : 'Publish failed')
+  }
+}
+
 function openFirst(): void {
   const first = show.value?.episodes[0]
   if (first) {
@@ -221,6 +232,13 @@ onMounted(() => {
       <h1 class="text-xl font-medium">{{ show.title }}</h1>
       <div class="flex flex-wrap gap-2">
         <DeskButton :icon="Save" tone="success" label="Save" @click="save" />
+        <DeskButton
+          v-if="show.status === 'draft'"
+          :icon="Check"
+          tone="success"
+          label="Publish"
+          @click="publish"
+        />
         <DeskButton
           :icon="BookOpen"
           tone="info"
