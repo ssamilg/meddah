@@ -163,7 +163,7 @@ watch(
           <p v-if="!scene" class="text-mute">{{ empty }}</p>
           <div v-else :key="scene.id" class="scene-fade">
             <h1 class="text-[1.22em] font-medium leading-snug">{{ scene.title }}</h1>
-            <p class="mt-4 max-w-[70ch] whitespace-pre-wrap leading-[1.65]">{{ scene.body }}</p>
+            <p class="mt-4 whitespace-pre-wrap leading-[1.65]">{{ scene.body }}</p>
           </div>
         </article>
       </div>

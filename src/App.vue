@@ -3,6 +3,7 @@ import AppNav from '@/components/AppNav.vue'
 import { useLocale } from '@/composables/useLocale'
 import { useTheme } from '@/composables/useTheme'
 import { themeLabel, uiCopy } from '@/i18n'
+import { loadReaderShow, readerPreview } from '@/lib/library'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -25,6 +26,13 @@ const editHref = computed(() => {
   }
   return href
 })
+
+const showTitle = computed(() => {
+  const showSlug = String(route.params.showSlug ?? '')
+  const preview = readerPreview(route.query)
+  const show = route.name === 'read' && showSlug ? loadReaderShow(showSlug, preview) : null
+  return show?.title ?? ''
+})
 </script>
 
 <template>
@@ -36,6 +44,7 @@ const editHref = computed(() => {
       :theme="theme"
       :edit-label="copy.edit"
       :edit-href="editHref"
+      :show-title="showTitle"
       @locale="toggleLocale"
       @theme="toggleTheme"
     />

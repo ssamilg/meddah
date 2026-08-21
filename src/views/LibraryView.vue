@@ -21,6 +21,7 @@ const selected = computed(() => {
 
 const coverSrc = computed(() => showCover(selected.value ?? undefined))
 const summary = computed(() => showSummary(selected.value ?? undefined))
+const firstEpisode = computed(() => selected.value?.episodes[0] ?? null)
 
 function selectShow(id: string): void {
   selectedId.value = id
@@ -115,7 +116,26 @@ onUnmounted(() => {
           </li>
         </ul>
         <template v-if="selected">
+          <RouterLink
+            v-if="firstEpisode"
+            :to="{
+              name: 'read',
+              params: { showSlug: selected.slug, episodeSlug: firstEpisode.slug },
+            }"
+            class="block h-[22.5rem] w-80 shrink-0 cursor-pointer overflow-hidden rounded-md bg-well"
+          >
+            <figure class="size-full">
+              <img
+                v-if="coverSrc"
+                :key="selected.id"
+                :src="coverSrc"
+                :alt="selected.title"
+                class="scene-fade size-full object-cover"
+              />
+            </figure>
+          </RouterLink>
           <figure
+            v-else
             class="h-[22.5rem] w-80 shrink-0 overflow-hidden rounded-md bg-well"
           >
             <img

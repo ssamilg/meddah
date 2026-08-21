@@ -7,6 +7,7 @@ defineProps<{
   theme: 'light' | 'dark'
   editLabel: string
   editHref: string | undefined
+  showTitle: string
 }>()
 
 const emit = defineEmits<{
@@ -18,9 +19,13 @@ const emit = defineEmits<{
 <template>
   <header class="border-b border-line bg-page/80">
     <div class="mx-auto flex h-14 w-full max-w-[68rem] items-center justify-between px-6">
-      <RouterLink to="/" class="cursor-pointer text-base font-medium tracking-tight text-ink">
-        Meddah
-      </RouterLink>
+      <div class="flex min-w-0 items-center gap-2 text-base font-medium tracking-tight text-ink">
+        <RouterLink to="/" class="shrink-0 cursor-pointer">Meddah</RouterLink>
+        <template v-if="showTitle">
+          <span class="shrink-0 font-normal text-mute" aria-hidden="true">/</span>
+          <span class="min-w-0 truncate">{{ showTitle }}</span>
+        </template>
+      </div>
       <div class="flex items-center gap-1">
         <a
           v-if="editHref"
