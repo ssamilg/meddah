@@ -16,6 +16,7 @@ import PathField from '@desk/components/PathField.vue'
 import { api, openReader } from '@desk/api'
 import { confirmAction, notify, reorder } from '@desk/feedback'
 import { slugify } from '@desk/slug'
+import { formatStamp } from '@desk/stamp'
 import type { Episode, Show, ShowEpisodeRef } from '@/types/library'
 
 const route = useRoute()
@@ -23,7 +24,6 @@ const router = useRouter()
 const slug = String(route.params.slug ?? '')
 const show = ref<Show | null>(null)
 const epTitle = ref('')
-const epSlug = ref('')
 const openIds = ref(new Set<string>())
 const drafts = ref<Record<string, Episode>>({})
 const dragIndex = ref<number | null>(null)
@@ -78,11 +78,6 @@ function draftTitle(id: string): string {
   return title
 }
 
-function draftSlug(id: string): string {
-  const value = drafts.value[id]?.slug ?? ''
-  return value
-}
-
 function draftTemplate(id: string): string {
   const value = drafts.value[id]?.template ?? ''
   return value
@@ -130,7 +125,7 @@ async function addEpisode(): Promise<void> {
     try {
       const result = await api.createEpisode(slug, {
         title: epTitle.value,
-        slug: epSlug.value || slugify(epTitle.value),
+        slug: slugify(epTitle.value),
       })
       const created = result.episode as { slug: string }
       notify('success', 'Episode created')
@@ -237,7 +232,8 @@ onMounted(() => {
       </div>
     </div>
     <div class="mb-4 text-sm text-mute">
-      id {{ show.id }} · {{ show.status || 'ready' }} · updated {{ show.updatedAt }}
+      <span v-if="show.status === 'draft'" class="text-warning">Draft · </span>
+      created {{ formatStamp(show.createdAt) }} · updated {{ formatStamp(show.updatedAt) }}
     </div>
     <div class="flex flex-col gap-4">
       <div>
@@ -293,7 +289,7 @@ onMounted(() => {
             />
             <DeskButton
               :icon="BookOpen"
-              tone="info"
+              tone="white"
               label="Open"
               @click="openReader(slug, episode.slug)"
             />
@@ -314,10 +310,6 @@ onMounted(() => {
                 :value="draftTitle(episode.id)"
                 @input="onDraftTitle(episode.id, $event)"
               />
-            </div>
-            <div>
-              <label>Slug</label>
-              <input class="w-full" :value="draftSlug(episode.id)" disabled />
             </div>
             <div>
               <label>Template</label>
@@ -344,7 +336,6 @@ onMounted(() => {
     </ul>
     <form class="flex flex-wrap gap-2" @submit.prevent="addEpisode">
       <input v-model="epTitle" placeholder="Episode title" class="flex-1" />
-      <input v-model="epSlug" placeholder="slug" class="w-36" />
       <DeskButton :icon="Plus" tone="success" type="submit" label="Add" />
     </form>
   </div>

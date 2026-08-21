@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { FolderOpen } from '@lucide/vue'
 import { onMounted, ref, watch } from 'vue'
+import DeskButton from '@desk/components/DeskButton.vue'
 import { api } from '@desk/api'
 import { notify } from '@desk/feedback'
 
@@ -15,6 +16,7 @@ const props = defineProps<{
 
 const files = ref<string[]>([])
 const picking = ref(false)
+const picker = ref<HTMLInputElement | null>(null)
 
 async function loadFiles(): Promise<void> {
   if (!props.showSlug) {
@@ -58,6 +60,10 @@ async function onFile(event: Event): Promise<void> {
   }
 }
 
+function pick(): void {
+  picker.value?.click()
+}
+
 onMounted(() => {
   void loadFiles()
 })
@@ -73,13 +79,22 @@ watch(
 <template>
   <div>
     <label>{{ label }}</label>
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap items-center gap-2">
       <input v-model="model" class="min-w-48 flex-1" :list="listId ?? 'plate-paths'" />
-      <label class="btn btn-sm btn-outline btn-info gap-1.5">
-        <FolderOpen class="size-4" />
-        {{ picking ? '…' : 'Pick file' }}
-        <input type="file" accept="image/*" class="hidden" @change="onFile" />
-      </label>
+      <input
+        ref="picker"
+        type="file"
+        accept="image/*"
+        class="sr-only"
+        @change="onFile"
+      />
+      <DeskButton
+        :icon="FolderOpen"
+        tone="info"
+        :label="picking ? '…' : 'Pick file'"
+        :disabled="picking"
+        @click="pick"
+      />
     </div>
     <datalist :id="listId ?? 'plate-paths'">
       <option v-for="file in files" :key="file" :value="file" />

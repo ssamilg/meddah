@@ -9,13 +9,14 @@ import {
   Save,
   Trash2,
 } from '@lucide/vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, nextTick, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import DeskButton from '@desk/components/DeskButton.vue'
 import PathField from '@desk/components/PathField.vue'
 import { api, openReader } from '@desk/api'
 import { confirmAction, notify, reorder } from '@desk/feedback'
 import { slugify } from '@desk/slug'
+import { formatStamp } from '@desk/stamp'
 import type { Episode, Scene } from '@/types/library'
 
 const route = useRoute()
@@ -24,6 +25,7 @@ const showSlug = String(route.params.slug ?? '')
 const episodeSlug = String(route.params.episodeSlug ?? '')
 const episode = ref<Episode | null>(null)
 const openIds = ref(new Set<string>())
+const sceneEls = new Map<string, HTMLElement>()
 const dragIndex = ref<number | null>(null)
 const overIndex = ref<number | null>(null)
 
@@ -40,6 +42,32 @@ function toggle(id: string): void {
     next.add(id)
   }
   openIds.value = next
+}
+
+function bindSceneEl(id: string, el: unknown): void {
+  if (el instanceof HTMLElement) {
+    sceneEls.set(id, el)
+  } else {
+    sceneEls.delete(id)
+  }
+}
+
+function sceneQueryId(): string {
+  const raw = route.query.scene
+  const value = Array.isArray(raw) ? raw[0] : raw
+  const id = typeof value === 'string' ? value : ''
+  return id
+}
+
+function revealScene(id: string): void {
+  if (id) {
+    const next = new Set(openIds.value)
+    next.add(id)
+    openIds.value = next
+    void nextTick(() => {
+      sceneEls.get(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+  }
 }
 
 function cleanScenes(scenes: Scene[]): Scene[] {
@@ -61,6 +89,8 @@ function cleanScenes(scenes: Scene[]): Scene[] {
 async function load(): Promise<void> {
   const data = await api.episode(showSlug, episodeSlug)
   episode.value = data.episode as Episode
+  await nextTick()
+  revealScene(sceneQueryId())
 }
 
 async function save(open = false): Promise<void> {
@@ -170,6 +200,13 @@ onMounted(() => {
     notify('error', err.message)
   })
 })
+
+watch(
+  () => route.query.scene,
+  () => {
+    revealScene(sceneQueryId())
+  },
+)
 </script>
 
 <template>
@@ -187,7 +224,9 @@ onMounted(() => {
         <DeskButton :icon="Trash2" tone="error" label="Delete" @click="remove" />
       </div>
     </div>
-    <p class="mb-4 text-sm text-mute">id {{ episode.id }} · updated {{ episode.updatedAt }}</p>
+    <p class="mb-4 text-sm text-mute">
+      created {{ formatStamp(episode.createdAt) }} · updated {{ formatStamp(episode.updatedAt) }}
+    </p>
     <div class="mb-8 flex flex-col gap-4">
       <div>
         <label>Title</label>
@@ -210,6 +249,7 @@ onMounted(() => {
       <li
         v-for="(scene, index) in episode.scenes"
         :key="scene.id"
+        :ref="(el) => bindSceneEl(scene.id, el)"
         class="bg-paper"
         :class="overIndex === index ? 'ring-1 ring-info' : ''"
         @dragover="onDragOver(index, $event)"

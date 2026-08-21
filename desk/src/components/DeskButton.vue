@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 
 withDefaults(
   defineProps<{
-    tone?: 'success' | 'error' | 'warning' | 'info' | 'ghost'
+    tone?: 'success' | 'error' | 'warning' | 'info' | 'ghost' | 'white'
     icon?: Component
     label?: string
     type?: 'button' | 'submit'
@@ -21,6 +21,7 @@ const toneClass = {
   warning: 'btn-outline btn-warning',
   info: 'btn-outline btn-info',
   ghost: 'btn-ghost',
+  white: 'btn-outline',
 } as const
 </script>
 
@@ -31,7 +32,7 @@ const toneClass = {
     :type="to ? undefined : type"
     class="btn btn-sm gap-1.5"
     :class="toneClass[tone ?? 'ghost']"
-    :disabled="disabled"
+    :disabled="to ? undefined : disabled"
     :aria-label="label"
   >
     <component :is="icon" v-if="icon" class="size-4" />

@@ -9,6 +9,7 @@
   --font-sans: 'Onest', ui-sans-serif, system-ui, sans-serif;
   --color-page: var(--meddah-page);
   --color-paper: var(--meddah-paper);
+  --color-field: var(--meddah-field);
   --color-ink: var(--meddah-ink);
   --color-mute: var(--meddah-mute);
   --color-line: var(--meddah-line);
@@ -17,6 +18,7 @@
 :root {
   --meddah-page: #0c121c;
   --meddah-paper: #141b2a;
+  --meddah-field: #070b12;
   --meddah-ink: #e2e8f0;
   --meddah-mute: #8a95a8;
   --meddah-line: #1c283c;
@@ -43,10 +45,10 @@ html body button:disabled {
   cursor: not-allowed;
 }
 
-input,
+input:not([type='file']),
 textarea,
 select {
-  background: var(--meddah-paper);
+  background: var(--meddah-field);
   color: var(--meddah-ink);
   border: 1px solid var(--meddah-line);
   border-radius: 0.375rem;
