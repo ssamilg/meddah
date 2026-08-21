@@ -4,6 +4,7 @@ import type { StageTemplate } from '@/types/library'
 
 export function useStageTemplate(preferred: Ref<StageTemplate>): {
   layout: Ref<StageLayout>
+  canPickLayout: Ref<boolean>
 } {
   const mobileMedia = window.matchMedia(mobileQuery)
   const tallMedia = window.matchMedia(tallQuery)
@@ -17,6 +18,8 @@ export function useStageTemplate(preferred: Ref<StageTemplate>): {
   function onTall(event: MediaQueryListEvent): void {
     tall.value = event.matches
   }
+
+  const canPickLayout = computed(() => !mobile.value && tall.value)
 
   const layout = computed(() => {
     let next: StageLayout
@@ -42,5 +45,5 @@ export function useStageTemplate(preferred: Ref<StageTemplate>): {
     tallMedia.removeEventListener('change', onTall)
   })
 
-  return { layout }
+  return { layout, canPickLayout }
 }

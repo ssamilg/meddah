@@ -9,13 +9,16 @@ function readImagesOn(): boolean {
   return on
 }
 
-export function useReader(episode: Ref<Episode | null>): {
+export function useReader(
+  episode: Ref<Episode | null>,
+  onBound?: (delta: 1 | -1) => void,
+): {
   episode: Ref<Episode | null>
   scenes: Ref<Scene[]>
   index: Ref<number>
   imagesOn: Ref<boolean>
   scene: Ref<Scene | undefined>
-  go: (delta: number) => void
+  go: (delta: number) => boolean
   goTo: (nextIndex: number) => void
   toggleImages: () => void
 } {
@@ -30,8 +33,14 @@ export function useReader(episode: Ref<Episode | null>): {
     index.value = clamped
   }
 
-  function go(delta: number): void {
-    goTo(index.value + delta)
+  function go(delta: number): boolean {
+    const last = Math.max(scenes.value.length - 1, 0)
+    const next = Math.min(Math.max(index.value + delta, 0), last)
+    const moved = next !== index.value
+    if (moved) {
+      index.value = next
+    }
+    return moved
   }
 
   function indexFromHash(): number {
@@ -53,12 +62,19 @@ export function useReader(episode: Ref<Episode | null>): {
     const target = event.target
     const typing =
       target instanceof HTMLElement &&
-      (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)
+      (target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
+        target.isContentEditable)
     if (!typing) {
       if (event.key === 'ArrowRight' || event.key === 'j' || event.key === 'J') {
-        go(1)
+        if (!go(1)) {
+          onBound?.(1)
+        }
       } else if (event.key === 'ArrowLeft' || event.key === 'k' || event.key === 'K') {
-        go(-1)
+        if (!go(-1)) {
+          onBound?.(-1)
+        }
       } else if (event.key === 'i' || event.key === 'I') {
         toggleImages()
       }

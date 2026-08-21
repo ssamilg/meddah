@@ -59,6 +59,11 @@ export function isContentStatus(value: unknown): value is ContentStatus {
   return ok
 }
 
+export function isDraftShow(show: Show | null | undefined): boolean {
+  const draft = show?.status === 'draft'
+  return draft
+}
+
 export function stageTemplate(value: unknown): StageTemplate {
   const template = isStageTemplate(value) ? value : 'spread'
   return template

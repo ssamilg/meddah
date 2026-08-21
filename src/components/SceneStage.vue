@@ -37,24 +37,42 @@ const wrapClass = computed(() => {
 
 const stageClass = computed(() => {
   let classes
-  if (stacked.value) {
-    classes = 'flex h-full min-h-0 flex-1 flex-col gap-5'
+  if (stacked.value && showPlate.value) {
+    classes = [
+      'grid h-full min-h-0 flex-1 gap-5',
+      '[grid-template-areas:"image"_"bar"_"paper"]',
+      'grid-rows-[minmax(0,2fr)_auto_minmax(0,3fr)]',
+    ].join(' ')
+  } else if (stacked.value) {
+    classes = [
+      'grid h-full min-h-0 flex-1 gap-5',
+      '[grid-template-areas:"bar"_"paper"]',
+      'grid-rows-[auto_minmax(0,1fr)]',
+    ].join(' ')
   } else if (compact.value && showPlate.value) {
-    classes = 'grid h-full min-h-0 flex-1 grid-rows-[auto_minmax(0,1fr)] gap-4'
+    classes = [
+      'grid h-full min-h-0 flex-1 gap-4',
+      '[grid-template-areas:"image"_"bar"_"paper"]',
+      'grid-rows-[auto_auto_minmax(0,1fr)]',
+    ].join(' ')
   } else if (compact.value) {
-    classes = 'grid h-full min-h-0 flex-1 grid-cols-1 gap-4'
+    classes = [
+      'grid h-full min-h-0 flex-1 gap-4',
+      '[grid-template-areas:"bar"_"paper"]',
+      'grid-rows-[auto_minmax(0,1fr)]',
+    ].join(' ')
   } else if (showPlate.value) {
-    classes = 'grid gap-5 md:grid-cols-2'
+    classes = 'grid grid-cols-2 gap-5 [grid-template-areas:"bar_bar"_"image_paper"]'
   } else {
-    classes = 'grid grid-cols-1 gap-5'
+    classes = 'grid grid-cols-1 gap-5 [grid-template-areas:"bar"_"paper"]'
   }
   return classes
 })
 
 const figureClass = computed(() => {
-  let classes = 'overflow-hidden rounded-md bg-well'
+  let classes = '[grid-area:image] overflow-hidden rounded-md bg-well'
   if (stacked.value) {
-    classes = `flex min-h-0 w-full flex-[2] items-center justify-center ${classes}`
+    classes = `flex min-h-0 w-full items-center justify-center ${classes}`
   } else if (compact.value) {
     classes = `h-[min(10.5rem,28vh)] ${classes}`
   } else {
@@ -63,12 +81,15 @@ const figureClass = computed(() => {
   return classes
 })
 
+const barClass = computed(() => {
+  const classes = '[grid-area:bar] min-w-0 shrink-0'
+  return classes
+})
+
 const paperWrapClass = computed(() => {
-  let classes = 'flex min-h-0 flex-col'
-  if (stacked.value && showPlate.value) {
-    classes = `${classes} w-full flex-[3]`
-  } else if (stacked.value) {
-    classes = `${classes} w-full flex-1`
+  let classes = '[grid-area:paper] flex min-h-0 flex-col'
+  if (stacked.value) {
+    classes = `${classes} w-full`
   } else if (compact.value) {
     classes = `${classes} min-h-0`
   } else if (showPlate.value) {
@@ -134,8 +155,10 @@ watch(
           </span>
         </button>
       </figure>
-      <div :class="paperWrapClass">
+      <div :class="barClass">
         <slot name="bar" />
+      </div>
+      <div :class="paperWrapClass">
         <article ref="paperEl" :class="paperClass" :style="readStyle">
           <p v-if="!scene" class="text-mute">{{ empty }}</p>
           <div v-else :key="scene.id" class="scene-fade">

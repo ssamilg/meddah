@@ -1,6 +1,7 @@
 import catalogJson from '../../content/catalog.json'
 import {
   isCatalog,
+  isDraftShow,
   isEpisode,
   isShow,
   type Catalog,
@@ -47,6 +48,29 @@ export function loadShow(slug: string): Show | null {
   return found
 }
 
+export function readerPreview(query: { preview?: unknown }): boolean {
+  const raw = query.preview
+  const flag = Array.isArray(raw) ? raw[0] : raw
+  const on = import.meta.env.DEV && flag !== undefined && flag !== '0' && flag !== 'false'
+  return on
+}
+
+export function loadReaderShow(slug: string, preview: boolean): Show | null {
+  const show = loadShow(slug)
+  const readable = show && (!isDraftShow(show) || preview) ? show : null
+  return readable
+}
+
+export function loadReaderEpisode(
+  showSlug: string,
+  episodeSlug: string,
+  preview: boolean,
+): Episode | null {
+  const show = loadReaderShow(showSlug, preview)
+  const episode = show ? loadEpisode(showSlug, episodeSlug) : null
+  return episode
+}
+
 export function loadEpisode(showSlug: string, episodeSlug: string): Episode | null {
   let found: Episode | null = null
   for (const [path, mod] of Object.entries(episodeModules)) {
@@ -81,7 +105,7 @@ export function loadLibrary(): Show[] {
   const shows: Show[] = []
   for (const entry of catalog.shows) {
     const show = loadShow(entry.slug)
-    if (!show || show.status === 'draft') {
+    if (!show || isDraftShow(show)) {
       continue
     }
     const loaded = loadEpisodesForShow(show.slug)

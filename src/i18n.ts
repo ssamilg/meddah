@@ -3,8 +3,14 @@ import type { Theme } from '@/theme'
 
 interface Copy {
   scene: string
+  episode: string
   prev: string
   next: string
+  prevEpisode: string
+  nextEpisode: string
+  layout: string
+  spread: string
+  stack: string
   imagesOn: string
   imagesOff: string
   language: string
@@ -25,8 +31,14 @@ interface Copy {
 const copy: Record<Locale, Copy> = {
   tr: {
     scene: 'Sahne',
+    episode: 'Bölüm',
     prev: 'Önceki',
     next: 'Sonraki',
+    prevEpisode: 'Önceki bölüm',
+    nextEpisode: 'Sonraki bölüm',
+    layout: 'Yerleşim',
+    spread: 'Yan yana',
+    stack: 'Üst üste',
     imagesOn: 'Görseller açık',
     imagesOff: 'Görseller kapalı',
     language: 'EN',
@@ -45,8 +57,14 @@ const copy: Record<Locale, Copy> = {
   },
   en: {
     scene: 'Scene',
+    episode: 'Episode',
     prev: 'Previous',
     next: 'Next',
+    prevEpisode: 'Previous Episode',
+    nextEpisode: 'Next Episode',
+    layout: 'Layout',
+    spread: 'Spread',
+    stack: 'Stack',
     imagesOn: 'Images on',
     imagesOff: 'Images off',
     language: 'TR',
