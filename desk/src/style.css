@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: dark --default;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Onest', ui-sans-serif, system-ui, sans-serif;
+  --color-page: var(--meddah-page);
+  --color-paper: var(--meddah-paper);
+  --color-ink: var(--meddah-ink);
+  --color-mute: var(--meddah-mute);
+  --color-line: var(--meddah-line);
+}
+
+:root {
+  --meddah-page: #0c121c;
+  --meddah-paper: #141b2a;
+  --meddah-ink: #e2e8f0;
+  --meddah-mute: #8a95a8;
+  --meddah-line: #1c283c;
+}
+
+html,
+body,
+#app {
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  background: #090b10;
+  color: var(--meddah-ink);
+  font-family: var(--font-sans);
+}
+
+html body button:not(:disabled) {
+  cursor: pointer;
+}
+
+html body button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  background: var(--meddah-paper);
+  color: var(--meddah-ink);
+  border: 1px solid var(--meddah-line);
+  border-radius: 0.375rem;
+  padding: 0.4rem 0.6rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--meddah-mute);
+  margin-bottom: 0.25rem;
+}
