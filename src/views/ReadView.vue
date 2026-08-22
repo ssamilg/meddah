@@ -10,6 +10,7 @@ import { useLocale } from '@/composables/useLocale'
 import { useReadFont } from '@/composables/useReadFont'
 import { useReadSize } from '@/composables/useReadSize'
 import { useReadTemplate } from '@/composables/useReadTemplate'
+import { usePlateFit } from '@/composables/usePlateFit'
 import { useStageTemplate } from '@/composables/useStageTemplate'
 import { loadReaderEpisode, loadReaderShow, readerPreview } from '@/lib/library'
 import { uiCopy } from '@/i18n'
@@ -79,6 +80,7 @@ function openAdjacent(delta: 1 | -1): void {
 const { scenes, index, imagesOn, scene, go, goTo, toggleImages } = useReader(episode, openAdjacent)
 const { size: readSize, canSmaller, canBigger, smaller, bigger } = useReadSize()
 const { font: readFont, setFont } = useReadFont()
+const { fit: plateFit, setFit } = usePlateFit()
 const contentTemplate = computed(() => resolveTemplate(episode.value, show.value))
 const { template, setTemplate } = useReadTemplate(contentTemplate)
 const { layout, canPickLayout } = useStageTemplate(template)
@@ -172,6 +174,8 @@ watch(
         :empty="copy.empty"
         :inspect-label="copy.inspect"
         :close-label="copy.close"
+        :failed-label="copy.imageMissing"
+        :fit="plateFit"
       >
         <template #bar>
           <BookBar
@@ -196,12 +200,17 @@ watch(
             :layout-label="copy.layout"
             :spread-label="copy.spread"
             :stack-label="copy.stack"
+            :fit="plateFit"
+            :fit-label="copy.imageFit"
+            :contain-label="copy.fitContain"
+            :cover-label="copy.fitCover"
             @images="toggleImages"
             @smaller="smaller"
             @bigger="bigger"
             @font="setFont"
             @episode="onEpisode"
             @template="onTemplate"
+            @fit="setFit"
           />
         </template>
       </SceneStage>

@@ -138,6 +138,7 @@ onUnmounted(() => {
                 :src="coverSrc"
                 :alt="selected.title"
                 img-class="size-full object-cover"
+                :failed-label="copy.imageMissing"
               />
             </figure>
           </RouterLink>
@@ -151,6 +152,7 @@ onUnmounted(() => {
               :src="coverSrc"
               :alt="selected.title"
               img-class="size-full object-cover"
+              :failed-label="copy.imageMissing"
             />
           </figure>
           <div class="flex min-h-[22.5rem] min-w-0 flex-col lg:h-[22.5rem]">

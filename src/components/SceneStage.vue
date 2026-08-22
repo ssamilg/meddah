@@ -4,6 +4,7 @@ import { computed, nextTick, ref, watch } from 'vue'
 import ImageFocus from '@/components/ImageFocus.vue'
 import PlateImage from '@/components/PlateImage.vue'
 import { readFontClass, type ReadFont } from '@/composables/useReadFont'
+import type { PlateFit } from '@/composables/usePlateFit'
 import type { StageLayout } from '@/layout'
 import { sceneImage, type Scene } from '@/types/library'
 
@@ -16,6 +17,8 @@ const props = defineProps<{
   empty: string
   inspectLabel: string
   closeLabel: string
+  failedLabel: string
+  fit: PlateFit
 }>()
 
 const focusing = ref(false)
@@ -108,9 +111,8 @@ const paperClass = computed(() => {
 })
 
 const imageClass = computed(() => {
-  const classes = stacked.value
-    ? 'max-h-full max-w-full object-contain'
-    : 'size-full object-cover'
+  const classes =
+    props.fit === 'contain' ? 'max-h-full max-w-full object-contain' : 'size-full object-cover'
   return classes
 })
 
@@ -154,6 +156,7 @@ watch(
             :src="imageSrc"
             :alt="scene?.title ?? ''"
             :img-class="imageClass"
+            :failed-label="failedLabel"
           />
           <span
             class="absolute right-3 bottom-3 z-10 flex size-8 items-center justify-center rounded-md bg-[#05070c]/55 text-ink"

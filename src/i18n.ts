@@ -24,6 +24,10 @@ interface Copy {
   missingEpisode: string
   inspect: string
   close: string
+  imageMissing: string
+  imageFit: string
+  fitContain: string
+  fitCover: string
   textSmaller: string
   textBigger: string
   readFont: string
@@ -57,6 +61,10 @@ const copy: Record<Locale, Copy> = {
     missingEpisode: 'Bölüm bulunamadı.',
     inspect: 'Görseli incele',
     close: 'Kapat',
+    imageMissing: 'Görsel yok.',
+    imageFit: 'Görsel sığdırma',
+    fitContain: 'Sığdır',
+    fitCover: 'Kapla',
     textSmaller: 'Yazıyı küçült',
     textBigger: 'Yazıyı büyüt',
     readFont: 'Yazı tipi',
@@ -93,6 +101,10 @@ const copy: Record<Locale, Copy> = {
     missingEpisode: 'Episode not found.',
     inspect: 'Inspect image',
     close: 'Close',
+    imageMissing: 'Image missing.',
+    imageFit: 'Image fit',
+    fitContain: 'Fit',
+    fitCover: 'Fill',
     textSmaller: 'Decrease text size',
     textBigger: 'Increase text size',
     readFont: 'Typeface',

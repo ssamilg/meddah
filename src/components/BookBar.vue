@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Images, ImageOff } from '@lucide/vue'
 import { READ_FONTS, type ReadFont } from '@/composables/useReadFont'
+import { PLATE_FITS, type PlateFit } from '@/composables/usePlateFit'
 import { STAGE_TEMPLATES, type ShowEpisodeRef, type StageTemplate } from '@/types/library'
 
 defineProps<{
@@ -24,6 +25,10 @@ defineProps<{
   layoutLabel: string
   spreadLabel: string
   stackLabel: string
+  fit: PlateFit
+  fitLabel: string
+  containLabel: string
+  coverLabel: string
 }>()
 
 const emit = defineEmits<{
@@ -33,6 +38,7 @@ const emit = defineEmits<{
   font: [value: ReadFont]
   episode: [slug: string]
   template: [value: StageTemplate]
+  fit: [value: PlateFit]
 }>()
 
 function onFont(event: Event): void {
@@ -53,6 +59,14 @@ function onTemplate(event: Event): void {
   const value = target.value
   if (value === 'spread' || value === 'stack') {
     emit('template', value)
+  }
+}
+
+function onFit(event: Event): void {
+  const target = event.target as HTMLSelectElement
+  const value = target.value
+  if (value === 'contain' || value === 'cover') {
+    emit('fit', value)
   }
 }
 
@@ -133,6 +147,20 @@ const fontNames: Record<ReadFont, string> = {
         <ImageOff v-else :size="16" :stroke-width="1.75" />
         <span class="hidden sm:inline">{{ imagesLabel }}</span>
       </button>
+      <template v-if="hasImage && imagesOn">
+        <label class="sr-only" :for="'read-fit'">{{ fitLabel }}</label>
+        <select
+          id="read-fit"
+          class="h-9 max-w-28 cursor-pointer border-0 bg-transparent p-0 font-sans text-sm text-mute shadow-none hover:text-ink"
+          :value="fit"
+          :aria-label="fitLabel"
+          @change="onFit"
+        >
+          <option v-for="id in PLATE_FITS" :key="id" :value="id">
+            {{ id === 'contain' ? containLabel : coverLabel }}
+          </option>
+        </select>
+      </template>
     </div>
   </div>
 </template>
