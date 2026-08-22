@@ -4,6 +4,8 @@ import {
   isDraftShow,
   isEpisode,
   isShow,
+  sceneImage,
+  showCover,
   type Catalog,
   type Episode,
   type Show,
@@ -129,4 +131,29 @@ export function loadLibrary(): Show[] {
     shows.push({ ...show, episodes: ordered })
   }
   return shows
+}
+
+export function showCoverSrcs(): string[] {
+  const srcs: string[] = []
+  for (const show of loadLibrary()) {
+    const src = showCover(show)
+    if (src) {
+      srcs.push(src)
+    }
+  }
+  return srcs
+}
+
+export function openingSceneSrcs(): string[] {
+  const srcs: string[] = []
+  for (const show of loadLibrary()) {
+    for (const ref of show.episodes) {
+      const episode = loadEpisode(show.slug, ref.slug)
+      const src = sceneImage(episode?.scenes[0])
+      if (src) {
+        srcs.push(src)
+      }
+    }
+  }
+  return srcs
 }

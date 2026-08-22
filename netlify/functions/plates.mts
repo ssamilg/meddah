@@ -55,7 +55,8 @@ function objectHeaders(meta: {
   ETag?: string
 }): Headers {
   const headers = new Headers()
-  headers.set('Cache-Control', 'private, max-age=86400')
+  headers.set('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800')
+  headers.set('Netlify-CDN-Cache-Control', 'public, durable, max-age=2678400')
   if (meta.ContentType) {
     headers.set('Content-Type', meta.ContentType)
   }

@@ -97,6 +97,43 @@ button:focus-visible {
   animation: scene-in 180ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.plate-wait {
+  overflow: hidden;
+  background: var(--meddah-well);
+}
+
+.plate-wait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    105deg,
+    rgb(255 255 255 / 0) 0%,
+    rgb(255 255 255 / 0.28) 50%,
+    rgb(255 255 255 / 0) 100%
+  );
+  animation: plate-sheen 1.35s ease-in-out infinite;
+}
+
+.dark .plate-wait::after {
+  background: linear-gradient(
+    105deg,
+    rgb(180 200 230 / 0) 0%,
+    rgb(180 200 230 / 0.1) 50%,
+    rgb(180 200 230 / 0) 100%
+  );
+}
+
+@keyframes plate-sheen {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(280%);
+  }
+}
+
 @keyframes scene-in {
   from {
     opacity: 0.35;

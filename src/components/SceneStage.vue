@@ -2,6 +2,7 @@
 import { Maximize2 } from '@lucide/vue'
 import { computed, nextTick, ref, watch } from 'vue'
 import ImageFocus from '@/components/ImageFocus.vue'
+import PlateImage from '@/components/PlateImage.vue'
 import { readFontClass, type ReadFont } from '@/composables/useReadFont'
 import type { StageLayout } from '@/layout'
 import { sceneImage, type Scene } from '@/types/library'
@@ -108,8 +109,8 @@ const paperClass = computed(() => {
 
 const imageClass = computed(() => {
   const classes = stacked.value
-    ? 'scene-fade max-h-full max-w-full object-contain'
-    : 'scene-fade size-full object-cover'
+    ? 'max-h-full max-w-full object-contain'
+    : 'size-full object-cover'
   return classes
 })
 
@@ -147,9 +148,15 @@ watch(
           :aria-label="inspectLabel"
           @click="openFocus"
         >
-          <img :key="scene?.id" :src="imageSrc" :alt="scene?.title" :class="imageClass" />
+          <PlateImage
+            v-if="imageSrc"
+            :key="scene?.id ?? imageSrc"
+            :src="imageSrc"
+            :alt="scene?.title ?? ''"
+            :img-class="imageClass"
+          />
           <span
-            class="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-md bg-[#05070c]/55 text-ink"
+            class="absolute right-3 bottom-3 z-10 flex size-8 items-center justify-center rounded-md bg-[#05070c]/55 text-ink"
           >
             <Maximize2 :size="16" :stroke-width="1.75" />
           </span>

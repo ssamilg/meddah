@@ -2,9 +2,12 @@
 import { computed } from 'vue'
 import { uiCopy } from '@/i18n'
 import { useLocale } from '@/composables/useLocale'
+import { showCoverSrcs } from '@/lib/library'
+import { prefetchPlates } from '@/lib/plates'
 
 const { locale, toggleLocale } = useLocale()
 const copy = computed(() => uiCopy(locale.value))
+prefetchPlates(showCoverSrcs())
 </script>
 
 <template>

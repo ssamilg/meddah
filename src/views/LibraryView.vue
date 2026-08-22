@@ -2,7 +2,9 @@
 import { ChevronRight } from '@lucide/vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadLibrary } from '@/lib/library'
+import PlateImage from '@/components/PlateImage.vue'
+import { loadLibrary, openingSceneSrcs, showCoverSrcs } from '@/lib/library'
+import { prefetchPlates } from '@/lib/plates'
 import { uiCopy } from '@/i18n'
 import { useLocale } from '@/composables/useLocale'
 import { showCover, showSummary, type Show } from '@/types/library'
@@ -22,6 +24,8 @@ const selected = computed(() => {
 const coverSrc = computed(() => showCover(selected.value ?? undefined))
 const summary = computed(() => showSummary(selected.value ?? undefined))
 const firstEpisode = computed(() => selected.value?.episodes[0] ?? null)
+
+prefetchPlates([...showCoverSrcs(), ...openingSceneSrcs()])
 
 function selectShow(id: string): void {
   selectedId.value = id
@@ -128,12 +132,12 @@ onUnmounted(() => {
             class="block h-[22.5rem] w-80 shrink-0 cursor-pointer overflow-hidden rounded-md bg-well"
           >
             <figure class="size-full">
-              <img
+              <PlateImage
                 v-if="coverSrc"
                 :key="selected.id"
                 :src="coverSrc"
                 :alt="selected.title"
-                class="scene-fade size-full object-cover"
+                img-class="size-full object-cover"
               />
             </figure>
           </RouterLink>
@@ -141,12 +145,12 @@ onUnmounted(() => {
             v-else
             class="h-[22.5rem] w-80 shrink-0 overflow-hidden rounded-md bg-well"
           >
-            <img
+            <PlateImage
               v-if="coverSrc"
               :key="selected.id"
               :src="coverSrc"
               :alt="selected.title"
-              class="scene-fade size-full object-cover"
+              img-class="size-full object-cover"
             />
           </figure>
           <div class="flex min-h-[22.5rem] min-w-0 flex-col lg:h-[22.5rem]">

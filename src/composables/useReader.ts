@@ -1,4 +1,5 @@
 import { computed, onMounted, onUnmounted, ref, watch, type Ref } from 'vue'
+import { prefetchPlates } from '@/lib/plates'
 import { sceneImage, type Episode, type Scene } from '@/types/library'
 
 const STORAGE_IMAGES = 'meddah.imagesOn'
@@ -85,6 +86,18 @@ export function useReader(
     () => episode.value?.id,
     () => {
       index.value = indexFromHash()
+    },
+    { immediate: true },
+  )
+
+  watch(
+    [index, scenes, imagesOn],
+    () => {
+      if (imagesOn.value) {
+        const list = scenes.value
+        const i = index.value
+        prefetchPlates([sceneImage(list[i + 1]), sceneImage(list[i + 2])])
+      }
     },
     { immediate: true },
   )
