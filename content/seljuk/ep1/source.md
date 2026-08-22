@@ -2,7 +2,7 @@
 ## Bölüm 1: Kopuş
 
 ## DIŞ. KIZILKUM BOZKIRI - İKİNDİ
-![Kızılkum bozkırı](plates/01-opening.jpeg)
+![Kızılkum bozkırı](plates/01-opening.webp)
 
 Kurak, sert bir rüzgar. Kamera alçaktan uçan toz bulutlarını yararak ilerler.
 
@@ -29,7 +29,7 @@ SELÇUK BEY (V.O.) (DEVAM)
 Yazı belirir: CEND HUDUDU, YENGİ-KENT SINIRI - 980'LER
 
 ## **İÇ. BEY ÇADIRI (CEND) - AKŞAM**
-![Bey çadırı](plates/02-toy.jpeg)
+![Bey çadırı](plates/02-toy.webp)
 
 Yüksek tavanlı yuvarlak keçe yurt tipi çadır. Ortam loş ve mumlar ile aydınlanmakta. Selçuk Bey’in Kınık obasının boy beyleri hilal düzeninde oturur. Ortada yüksekçe bir minder üzerinde tüm vakarıyla Selçuk Bey ve hemen sağ yanında obanın kam’ı. Ortadaki tandır benzeri çukurda yanan ateşin etkisiyle beylerin suratlarında gölge oyunları var. Çadırın dokusu görkemli, yeni ve temiz. Beylerin yüzünde yorgunluk, bıkkınlık ve merak aynı anda görülüyor. Selçuk Bey düşünceli.
 
@@ -123,7 +123,7 @@ Selçuk Bey arkasını döner, elçiye yaklaşır. Uzatılan altın temrenli oku
 ## ZAMAN ATLAMASI 1007
 
 ## **DIŞ. NUR ŞEHRİ (Günümüz Nürata-Özbekistan) PAZARI - GÜNDÜZ**
-![Nur pazarı](plates/03-market-1.jpeg)
+![Nur pazarı](plates/03-market-1.webp)
 
 Öğle güneşi kavurucu. Tozlu rüzgar, çatlamış kerpiç duvarları dövüyor. Pazar yerinde uğultu değil, ölümcül bir sessizlik ve sefalet hakim.
 
@@ -296,7 +296,7 @@ Ellerini dua için göğüs hizasında açtığı an... Dışarıdan yeri titret
 Tuğrul'un gözleri açılır. Sükunet bozulmuştur.
 
 ## **DIŞ. NUR OBASI - DEVAM**
-![Çağrı obada](plates/08-cagri-oba.jpeg)
+![Çağrı obada](plates/08-cagri-oba.webp)
 
 Saltuk elindeki yayı düşürür. Gökçe satırı bırakıp ayağa fırlar. Zayıf, aç çocuklar çadır gölgelerinden başlarını kaldırır.
 
@@ -368,7 +368,7 @@ Kızılkum'u at çatlatsak da durmadan geçeceğiz.
 Kardeşler birbirlerine bakarlar. Tartışma yerini çaresiz bir aciliyete bırakmıştır. Tuğrul çadırına doğru yürür.
 
 ## **DIŞ. CEND OBASI / BEY ÇADIRI - SABAH**
-![Selçuk Bey'in çadırı](plates/11-selcuk-tent.jpeg)
+![Selçuk Bey'in çadırı](plates/11-selcuk-tent.webp)
 
 Gökyüzü kurşuni. Rüzgar ölü toprağı savuruyor.
 
@@ -484,7 +484,7 @@ Tuğrul çadırdan dışarı doğru yürür. Çağrı kardeşinin yanından bir 
 Musa Yabgu çadırın sessizliğinde, rüzgarın yırttığı çürük çadırda cesetle baş başa kalır.
 
 ## İÇ. CEND OBASI / ÇOCUKLUK ÇADIRI - AKŞAM
-![Çocukluk çadırı](plates/12-cagri-tugrul-tent.jpeg)
+![Çocukluk çadırı](plates/12-cagri-tugrul-tent.webp)
 
 Loş ve dar çadır. ÇAĞRI küçük çadırın ortasında elindeki tahta kılıcı inceleyerek dikilmektedir. Keçe kapı hareketlenir ve içeri TUĞRUL girer.
 
@@ -551,7 +551,7 @@ Sessizlik olur. Tuğrul, kardeşinin yüzündeki sarsılmaz inatçılığa son b
 
 
 ## DIŞ. CEND OBASI / MEZARLIK - GÜNDÜZ
-![Mezarlık](plates/13-cemetary.jpeg)
+![Mezarlık](plates/13-cemetary.webp)
 
 Sert, ıslık çalan bir rüzgar. Küreklerden dökülen toprağın tok sesi.
 
@@ -619,7 +619,7 @@ Akşam görüşürüz.
 Ertaş ve adamları yavaşça geri çekilir. Kardeşler ve Musa, Ertaş'ın arkasından bakarken adamlar kalabalık ve puslu havada yavaşça kaybolur.
 
 ## DIŞ. CEND OBASI / ÇADIRLARIN ARASI - GÜNDÜZ
-![Yınal ve Erbasan](plates/14-yinal-erbasan.jpeg)
+![Yınal ve Erbasan](plates/14-yinal-erbasan.webp)
 
 Cenaze dönüşü. Oba sessiz. Rüzgar, sönmüş ocakların külünü savurmaktadır.
 
@@ -663,7 +663,7 @@ Erbasan saygıyla başını eğer ve usulca geri çekilerek çadırların arası
 İbrahim su fıçısıyla yalnız kalır. Suya yansıyan yüzüne bakar. Gözlerindeki yasın yerini, soğuk bir hesaplaşma almıştır. Yarınki meclisin dengesi artık değişmiştir.
 
 ## İÇ. BEY ÇADIRI - AKŞAM
-![Kengeş](plates/15-kenges.jpeg)
+![Kengeş](plates/15-kenges.webp)
 
 Çadırın içi loş. Sadece ortadaki ateş çukurunda yanan cılız alevler yüzleri aydınlatıyor.
 
@@ -796,7 +796,7 @@ TUĞRUL (DEVAM)
 Arslan Yabgu bizi iki aciz esir gibi çağırdı. Karşısında koca bir ordu bulacak. İhtiyacımız olan yurdu amcamın lütfuyla değil, Kınık'ın gövdesiyle alacağız.
 
 ## DIŞ. CEND OBASI / BOZKIR SINIRI - GECE
-![İbrahim ve derviş](plates/16-ibo-and-dervis.jpeg)
+![İbrahim ve derviş](plates/16-ibo-and-dervis.webp)
 
 Obanın dışında, rüzgarın dövdüğü ıssız bir tepelik. Tepede, kökleri kayalara tutunmuş yalnız, ulu bir ağaç gövdesi.
 
@@ -886,7 +886,7 @@ Yınal arkasını döner ve yavaş adımlarla, karanlığın içinden obaya, yak
 Derviş, onun karanlıkta kayboluşunu izlerken, matarasını beline bağlar.
 
 ## DIŞ. CEND OBASI - GECE
-![Montaj](plates/17-montage.jpeg)
+![Montaj](plates/17-montage.webp)
 
 İBRAHİM YINAL, karanlığın içinden obaya girer. Adımlarını yavaşlatır. Çadırların arasında uyku değil, fısıltılı ve hararetli bir hareketlilik hakimdir.
 
@@ -918,7 +918,7 @@ Tuğrul (Siyaset) ve Çağrı (Ordu), Kınık obasını sabaha hazırlamak için
 MONTAJ BİTER.
 
 ## DIŞ. CEND ORDUGAHI / MEYDAN - ÖĞLE VAKTİ
-![Ordugah toy](plates/18-toy.jpeg)
+![Ordugah toy](plates/18-toy.webp)
 
 Geniş ordugah meydanının ortasında devasa bir ateş yanmaktadır. Rüzgar, ateşin etrafına dikilmiş üç at kuyruklu Selçuklu TUĞ'larını şiddetle dalgalandırır. Sancak veya bayrak yoktur; sadece bozkırın sert, kadim sembolleri.
 
@@ -1015,7 +1015,7 @@ Tuğrul'un yüzünde bir zafer gülümsemesi oluşmaz. Sadece başını hafifçe
 Ordugahtan, yeri titreten bir nara kopar. Askerler kılıçlarını kalkanlarına vurmaya başlar. Selçuklu göçü başlamıştır.
 
 ## DIŞ. CEND OBASI / MEZARLIK - SEHER
-![Tuğrul ve derviş](plates/19-tugrul-dervis.jpeg)
+![Tuğrul ve derviş](plates/19-tugrul-dervis.webp)
 
 Güneş henüz doğmamış, gökyüzü lacivert ve gri tonlarında. Cend obasının yerinde yeller esmektedir. Çadırlar sökülmüş, ateşler toprakla örtülmüştür. Uzaktan, yüzlerce atın, kağnıların ve insanların yarattığı devasa, boğuk bir göç uğultusu gelir.
 
@@ -1083,7 +1083,7 @@ Tuğrul, bu gizemli adamın sözlerinin ağırlığı altında ezildiğini hisse
 Arkasını döner ve ağır adımlarla ufka doğru yürümeye başlar.
 
 ## **DIŞ. KIZILKUM BOZKIRI - GÜNDOĞUMU**
-![Göç](plates/20-exodus.jpeg)
+![Göç](plates/20-exodus.webp)
 
 Güneş, ufuk çizgisini kan kırmızısı bir renkle yararak doğar.
 

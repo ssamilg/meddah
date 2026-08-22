@@ -18,6 +18,7 @@ import {
   readEpisode,
   readShow,
 } from '../scripts/lib/content.mjs'
+import { optimizePlate, webpName } from '../scripts/lib/optimize-image.mjs'
 
 const READER_ORIGIN = 'http://localhost:5173'
 
@@ -173,10 +174,16 @@ async function route(
     } else {
       mkdirSync(folder, { recursive: true })
       const binary = Buffer.from(data.replace(/^data:[^;]+;base64,/, ''), 'base64')
-      writeFileSync(join(folder, filename), binary)
+      let stored = filename
+      let bytes = binary
+      if (ext !== '.svg') {
+        bytes = await optimizePlate(binary)
+        stored = webpName(filename)
+      }
+      writeFileSync(join(folder, stored), bytes)
       const publicPath = episodeSlug
-        ? `/plates/${showSlug}/${episodeSlug}/${filename}`
-        : `/plates/${showSlug}/${filename}`
+        ? `/plates/${showSlug}/${episodeSlug}/${stored}`
+        : `/plates/${showSlug}/${stored}`
       send(res, 201, { path: publicPath })
     }
   } else {
