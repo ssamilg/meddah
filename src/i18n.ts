@@ -65,9 +65,9 @@ const copy: Record<Locale, Copy> = {
     landingEnter: 'Söz başlasın',
     landingAspects: [
       'Sahne sahne okunur',
-      'Yazı levhayla durur',
-      'Parça biter dağılmaz',
-      'Anlatı sükûn bulur',
+      'Yazı levhaya tutunur',
+      'Bölümler ardına yenisi',
+      'Hikaye hayat bulur',
     ],
   },
   en: {
