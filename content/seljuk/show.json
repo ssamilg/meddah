@@ -3,7 +3,7 @@
   "slug": "seljuk",
   "title": "Al-i Selçuk",
   "createdAt": "2026-08-21T13:42:16.772Z",
-  "updatedAt": "2026-08-21T21:25:06.438Z",
+  "updatedAt": "2026-08-21T21:37:56.830Z",
   "episodes": [
     {
       "id": "e46fbde3-c88d-459e-ac7c-700d23456632",
@@ -22,6 +22,6 @@
     }
   ],
   "template": "stack",
-  "cover": "/plates/seljuk/cover-3.jpeg",
-  "summary": "Kınık boyunu açlığa ve her türlü düşmana karşı hayatta tutmaya çalışan iki zıt kutuplu kardeşin hikayesi. "
+  "cover": "/plates/seljuk/cover-0.jpeg",
+  "summary": "Kınık boyunu açlığa ve her türlü düşmana karşı hayatta tutmaya çalışan iki zıt kutuplu kardeşin hikayesi."
 }

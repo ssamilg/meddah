@@ -12,11 +12,13 @@
     "new-episode": "node scripts/new-episode.mjs"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1116.0",
     "@lucide/vue": "^1.33.0",
     "vue": "^3.5.13",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
+    "@netlify/functions": "^6.0.0",
     "@tailwindcss/vite": "^4.1.11",
     "@vitejs/plugin-vue": "^6.0.0",
     "daisyui": "^5.0.50",

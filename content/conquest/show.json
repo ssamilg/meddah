@@ -3,7 +3,7 @@
   "slug": "conquest",
   "title": "İstanbul'un Fethi",
   "createdAt": "2026-08-21T13:42:16.759Z",
-  "updatedAt": "2026-08-21T17:01:39.454Z",
+  "updatedAt": "2026-08-21T21:32:24.917Z",
   "episodes": [
     {
       "id": "ce27edf8-d8c9-4017-965a-372591771e61",
@@ -27,7 +27,7 @@
     }
   ],
   "status": "ready",
-  "cover": "/plates/conquest/cover.png",
+  "cover": "/plates/conquest/cover.jpeg",
   "template": "stack",
   "summary": "Konstantiniyye'nin son yüzyılı. Yirmi yaşındaki Mehmed, aşılmaz denilen surların önünde bir çağ kapatmaya hazırlanır."
 }

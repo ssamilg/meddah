@@ -1,0 +1,18 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/plates/*"
+  to = "/.netlify/functions/plates?key=:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
