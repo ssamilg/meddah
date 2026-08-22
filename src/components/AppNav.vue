@@ -19,11 +19,20 @@ const emit = defineEmits<{
 <template>
   <header class="border-b border-line bg-page/80">
     <div class="mx-auto flex h-14 w-full max-w-[68rem] items-center justify-between px-6">
-      <div class="flex min-w-0 items-center gap-2 text-base font-medium tracking-tight text-ink">
+      <div class="flex min-w-0 items-baseline gap-2 text-base font-medium leading-none tracking-tight text-ink">
         <RouterLink to="/" class="shrink-0 cursor-pointer">Meddah</RouterLink>
         <template v-if="showTitle">
           <span class="shrink-0 font-normal text-mute" aria-hidden="true">/</span>
           <span class="min-w-0 truncate">{{ showTitle }}</span>
+        </template>
+        <template v-else>
+          <span class="shrink-0 font-normal text-mute" aria-hidden="true">·</span>
+          <a
+            href="https://ssamilg.dev"
+            class="shrink-0 font-literata font-normal tracking-normal text-mute hover:text-ink"
+          >
+            SSG
+          </a>
         </template>
       </div>
       <div class="flex items-center gap-1">
